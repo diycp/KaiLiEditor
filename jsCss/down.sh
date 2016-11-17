@@ -1,0 +1,24 @@
+wget http://static.500d.me/resources/500d/js/jquery.js?v=4004
+wget http://static.500d.me/resources/500d/js/jquery-1.8.0.js?v=4004
+wget http://static.500d.me/resources/500d/js/layer.js?v=4004
+wget http://static.500d.me/resources/500d/editresume/cropper.min.js
+wget http://static.500d.me/resources/500d/js/common.js?v=4004
+wget http://static.500d.me/resources/500d/js/utils.js?v=4004
+wget http://static.500d.me/resources/500d/js/jquery.imgareaselect.js?v=4004
+wget http://static.500d.me/resources/500d/js/ajaxfileupload.js?v=4004
+wget http://static.500d.me/resources/500d/editresume/tooltip.js?v=4004
+wget http://static.500d.me/resources/500d/editresume/Sortable.min.js?v=4004
+wget http://static.500d.me/resources/500d/editresume/dropdown.js?v=4004
+wget http://static.500d.me/resources/500d/editresume/modal.js?v=4009
+wget http://static.500d.me/resources/500d/editresume/resume.js?v=4014
+wget http://static.500d.me/resources/500d/editresume/colpick.js
+wget http://static.500d.me/resources/500d/editresume/edit.js?v=4015
+wget http://static.500d.me/resources/500d/editresume/jquery-ui.min.js
+wget http://static.500d.me/resources/500d/js/zclip/jquery.zclip.min.js" type="text/javascript
+wget http://static.500d.me/resources/500d/editresume/css/bootstrap.min.css?v=4004
+wget http://static.500d.me/resources/500d/editresume/css/zxbj_base.css?v=4004
+wget http://static.500d.me/resources/500d/css/layer.css
+wget http://static.500d.me/resources/500d/editresume/css/edit.css?v=4004
+wget http://static.500d.me/resources/500d/editresume/cropper.min.css
+wget http://static.500d.me/resources/500d/editresume/colpick.css
+wget http://static.500d.me/resources/500d/editresume/css/jm0225.css

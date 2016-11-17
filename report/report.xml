@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TOP company="sonoscape">
+    <REPORT>
+        <LOGO name="caption">hospitallogo.png</LOGO>
+        <CAP1 font="30pt" color="black" algin="center">123qewtuuyiuouiuiouipiopiopi</CAP1>
+        <CAP2 font="20pt" color="black" algin="center">1电子胃镜检查报告</CAP2>
+        <CHECKID name="检查号">1S20160831911</CHECKID>
+        <MODEL name="镜体">1EG-500L</MODEL>
+        <ITEM1 name="姓名" key="Name">1张三</ITEM1>
+        <ITEM1 name="性别">1男</ITEM1>
+        <ITEM1 name="年龄">112</ITEM1>
+        <ITEM2 name="住院号">1123</ITEM2>
+        <ITEM2 name="申请者">1</ITEM2>
+        <ITEM2 name="检查时间">12016-08-31</ITEM2>
+        <IMG1 name="胃体" width="130pt">S20160831911001.jpg</IMG1>
+        <IMG1 width="130pt">S20160831911002.jpg</IMG1>
+        <IMG1 name="幽门" width="130pt">S20160831911003.jpg</IMG1>
+        <IMG1 name="胃窦" width="130pt">S20160831911004.jpg</IMG1>
+        <IMG1 width="130pt">S20160831911005.jpg</IMG1>
+        <IMG2 width="130pt">S20160831911006.jpg</IMG2>
+        <IMG2 name="幽门" width="130pt">S20160831911007.jpg</IMG2>
+        <IMG2 name="胃角" width="130pt">S20160831911008.jpg</IMG2>
+        <IMG2 name="十二指肠降部" width="130pt">S20160831911009.jpg</IMG2>
+        <IMG2 name="十二指肠降部" width="130pt">S20160831911010.jpg</IMG2>
+        <SEE name="检查所见">1食管：粘膜粗糙，呈颗粒感，血管纹理欠清晰，局部可见少许点片状充血糜烂灶，食管舒缩良好。&amp;#0d 贲门：粘膜光滑，开闭好，齿状线清晰。&amp;#0d 胃底：粘膜光滑，&amp;#20粘液湖清亮，量少。&amp;#0d 胃体：粘膜光滑，未见异常。&amp;#0d 胃角：弧形，粘膜光滑。&amp;#0d 胃窦：粘膜光滑，红白相间，以红象为主，蠕动正常。&amp;#0d 幽门：类圆形，粘膜光滑，开闭好。&amp;#0d 十二指肠球部：粘膜光滑，未见异常。&amp;#0d 十二指肠降部：粘膜光滑，乳头形态正常，未见异常。</SEE>
+        <CONCLUSION name="诊断">1慢性食道炎</CONCLUSION>
+        <SUGGESTION name="建议">1仅供临床参考</SUGGESTION>
+        <BIOPSY name="活检部位">1慢性食道炎</BIOPSY>
+        <DOCTOR name="医生">111</DOCTOR>
+        <DECLARATION algin="right">1本报告仅供参考。</DECLARATION>
+        <PRINTTIME name="打印时间" algin="right">12016-09-09 12:08:08</PRINTTIME>
+    </REPORT>
+</TOP>

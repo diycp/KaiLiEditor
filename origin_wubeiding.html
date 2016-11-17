@@ -1,0 +1,2595 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="keywords" content="在线编辑,简历在线编辑"/>
+    <meta name="description" content="简历在线编辑，多个主题选择，不同主题导出不同简历。"/>
+    <title>五百丁的简历 - 五百丁简历</title>
+    <script type="text/javascript" src="http://static.500d.me/resources/500d/js/jquery.js?v=4004"></script>
+    <script type="text/javascript" src="http://static.500d.me/resources/500d/js/jquery-1.8.0.js?v=4004"></script>
+    <link rel="stylesheet" href="http://static.500d.me/resources/500d/editresume/css/bootstrap.min.css?v=4004"/>
+    <link rel="stylesheet" href="http://static.500d.me/resources/500d/editresume/css/zxbj_base.css?v=4004"/>
+    <link rel="stylesheet" href="http://static.500d.me/resources/500d/css/layer.css"/>
+    <link rel="stylesheet" href="http://static.500d.me/resources/500d/editresume/css/edit.css?v=4004"/>
+    <link rel="stylesheet" href="http://static.500d.me/resources/500d/editresume/cropper.min.css"/>
+    <link rel="stylesheet" href="http://static.500d.me/resources/500d/editresume/colpick.css"/>
+    <script type="text/javascript" src="http://static.500d.me/resources/500d/js/layer.js?v=4004"></script>
+    <script type="text/javascript" src="http://static.500d.me/resources/500d/editresume/cropper.min.js"></script>
+    <script type="text/javascript" src="http://static.500d.me/resources/500d/js/common.js?v=4004"></script>
+    <script type="text/javascript" src="http://static.500d.me/resources/500d/js/utils.js?v=4004"></script>
+    <script type="text/javascript"
+            src="http://static.500d.me/resources/500d/js/jquery.imgareaselect.js?v=4004"></script>
+    <script type="text/javascript" src="http://static.500d.me/resources/500d/js/ajaxfileupload.js?v=4004"></script>
+    <script type="text/javascript" src="http://static.500d.me/resources/500d/editresume/tooltip.js?v=4004"></script>
+    <script type="text/javascript"
+            src="http://static.500d.me/resources/500d/editresume/Sortable.min.js?v=4004"></script>
+    <script type="text/javascript" src="http://static.500d.me/resources/500d/editresume/dropdown.js?v=4004"></script>
+    <script type="text/javascript" src="http://static.500d.me/resources/500d/editresume/modal.js?v=4009"></script>
+    <script type="text/javascript" src="http://static.500d.me/resources/500d/editresume/resume.js?v=4014"></script>
+    <script type="text/javascript" src="http://static.500d.me/resources/500d/editresume/colpick.js"></script>
+    <script type="text/javascript" src="http://static.500d.me/resources/500d/editresume/edit.js?v=4015"></script>
+    <script src="http://static.500d.me/resources/500d/editresume/jquery-ui.min.js"></script>
+    <script src="http://static.500d.me/resources/500d/js/zclip/jquery.zclip.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="http://static.500d.me/resources/500d/editresume/css/jm0203.css"/>
+</head>
+
+<body>
+<!--提示框-->
+<!--
+<div id="pop_box" class="pop-layer-box"></div>
+-->
+<!--加载样式-->
+<div class="zx-loading" style="display:none"></div>
+
+<div class="resumebg"></div>
+<div class="resumebg1"></div>
+<!--替换模板-->
+<div class="changeModal">
+    <span class="closeBtn" id="changecloseBtn"></span>
+    <a name="top"/>
+    <div class="zx-container">
+        <div class="zx-tag-box">
+            <div class="zx-tag">
+                <a class="current" href="javaScript:;">简历模板</a>
+            </div>
+            <div class="zx-bar-box">
+                <div class="zx-search-div">
+                    <input type="hidden" name="resume_type" id="current_resume_type" value="common"/>
+                    <div class="zx-search"><input type="text" id="templateKeyword" placeholder="想找什么岗位的简历模板"/>
+                        <button id="templateSeach"></button>
+                    </div>
+                </div>
+                <div class="zx-tag-div templateSort">
+                    <a class="current hot" data_sort="sales">最受欢迎</a>
+                    <a class="new" data_sort="time">最新发布</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="zx-mblist-box template_list_water_fall">
+            <div class="zx-mblist-null" id="without_tips" style="display:none">
+                <img src="http://static.500d.me/resources/500d/editresume/images/zxbj/null.png" width="152"/>
+                <p>这里好像空空的，还是换其他的吧。。。</p>
+            </div>
+            <ul class="clearfix" id="data_template_list" data_type="common" data_page_num="1">
+                <li class="data_template_list">
+                    <div class="list-con clearfix">
+                        <div class="img">
+                            <img src="http://static.500d.me/upload/image/201511/e50569b0-1f91-4e62-8149-813a882f3a3a-thumb.jpg"
+                                 alt="JM0203"/>
+                            <div class="hover-btn">
+                                <span class="huiyuan"></span>
+                                <a href="javascript:;" class="resume_change_template" data-itemid="206">选择</a>
+                            </div>
+                        </div>
+                        <div class="text">
+                            <a class="title">JM0203</a>
+                            <div class="bd clearfix"><span class="type">支持<i>PDF</i>下载</span><span class="num">10597155人使用</span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="data_template_list">
+                    <div class="list-con clearfix">
+                        <div class="img">
+                            <img src="http://static.500d.me/upload/image/201511/3d237c86-fd2b-4dcc-b9ad-84f8a07723be-thumb.jpg"
+                                 alt="JM0256"/>
+                            <div class="hover-btn">
+                                <span class="huiyuan"></span>
+                                <a href="javascript:;" class="resume_change_template" data-itemid="73">选择</a>
+                            </div>
+                        </div>
+                        <div class="text">
+                            <a class="title">JM0256</a>
+                            <div class="bd clearfix"><span class="type">支持<i>PDF</i>下载</span><span class="num">1873909人使用</span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="data_template_list">
+                    <div class="list-con clearfix">
+                        <div class="img">
+                            <img src="http://static.500d.me/upload/image/201609/26/45799c35-f890-4e30-8fa4-109a1f14677f-thumb.jpg"
+                                 alt="SJS0056"/>
+                            <div class="hover-btn">
+                                <span class="huiyuan"></span>
+                                <a href="javascript:;" class="resume_change_template" data-itemid="512">选择</a>
+                            </div>
+                        </div>
+                        <div class="text">
+                            <a class="title">SJS0056</a>
+                            <div class="bd clearfix"><span class="type">支持<i>PDF</i>下载</span><span
+                                    class="num">72072人使用</span></div>
+                        </div>
+                    </div>
+                </li>
+                <li class="data_template_list">
+                    <div class="list-con clearfix">
+                        <div class="img">
+                            <img src="http://static.500d.me/upload/image/201511/efeff465-f9a6-4feb-a2a1-0f02c29267ee-thumb.jpg"
+                                 alt="JM0001Y"/>
+                            <div class="hover-btn">
+                                <span class="huiyuan"></span>
+                                <a href="javascript:;" class="resume_change_template" data-itemid="1">选择</a>
+                            </div>
+                        </div>
+                        <div class="text">
+                            <a class="title">JM0001Y</a>
+                            <div class="bd clearfix"><span class="type">支持<i>PDF</i>下载</span><span class="num">6926079人使用</span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="data_template_list">
+                    <div class="list-con clearfix">
+                        <div class="img">
+                            <img src="http://static.500d.me/upload/image/201511/40c8e186-9eda-4597-a06e-a2370e03968e-thumb.jpg"
+                                 alt="JM0094"/>
+                            <div class="hover-btn">
+                                <span class="huiyuan"></span>
+                                <a href="javascript:;" class="resume_change_template" data-itemid="216">选择</a>
+                            </div>
+                        </div>
+                        <div class="text">
+                            <a class="title">JM0094</a>
+                            <div class="bd clearfix"><span class="type">支持<i>PDF</i>下载</span><span
+                                    class="num">304692人使用</span></div>
+                        </div>
+                    </div>
+                </li>
+                <li class="data_template_list">
+                    <div class="list-con clearfix">
+                        <div class="img">
+                            <img src="http://static.500d.me/upload/image/201511/d469fe0d-9b62-42c8-8f4c-bd914ca9bdef-thumb.jpg"
+                                 alt="JM0193"/>
+                            <div class="hover-btn">
+                                <span class="huiyuan"></span>
+                                <a href="javascript:;" class="resume_change_template" data-itemid="81">选择</a>
+                            </div>
+                        </div>
+                        <div class="text">
+                            <a class="title">JM0193</a>
+                            <div class="bd clearfix"><span class="type">支持<i>PDF</i>下载</span><span
+                                    class="num">741974人使用</span></div>
+                        </div>
+                    </div>
+                </li>
+                <li class="data_template_list">
+                    <div class="list-con clearfix">
+                        <div class="img">
+                            <img src="http://static.500d.me/upload/image/201511/0393c091-d6ec-40c4-ab49-523ffb25d7c9-thumb.jpg"
+                                 alt="YW0005"/>
+                            <div class="hover-btn">
+                                <span class="huiyuan"></span>
+                                <a href="javascript:;" class="resume_change_template" data-itemid="232">选择</a>
+                            </div>
+                        </div>
+                        <div class="text">
+                            <a class="title">YW0005</a>
+                            <div class="bd clearfix"><span class="type">支持<i>PDF</i>下载</span><span
+                                    class="num">462428人使用</span></div>
+                        </div>
+                    </div>
+                </li>
+                <li class="data_template_list">
+                    <div class="list-con clearfix">
+                        <div class="img">
+                            <img src="http://static.500d.me/upload/image/201511/4bf2ccbb-3e26-4256-9295-67fe8e67def5-thumb.jpg"
+                                 alt="JM0001"/>
+                            <div class="hover-btn">
+                                <span class="huiyuan"></span>
+                                <a href="javascript:;" class="resume_change_template" data-itemid="3">选择</a>
+                            </div>
+                        </div>
+                        <div class="text">
+                            <a class="title">JM0001</a>
+                            <div class="bd clearfix"><span class="type">支持<i>PDF</i>下载</span><span class="num">3265564人使用</span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="data_template_list">
+                    <div class="list-con clearfix">
+                        <div class="img">
+                            <img src="http://static.500d.me/upload/image/201511/43a3c5dd-cce7-4e1f-bba1-3f0490e14bcc-thumb.jpg"
+                                 alt="JM0108"/>
+                            <div class="hover-btn">
+                                <span class="huiyuan"></span>
+                                <a href="javascript:;" class="resume_change_template" data-itemid="225">选择</a>
+                            </div>
+                        </div>
+                        <div class="text">
+                            <a class="title">JM0108</a>
+                            <div class="bd clearfix"><span class="type">支持<i>PDF</i>下载</span><span
+                                    class="num">846028人使用</span></div>
+                        </div>
+                    </div>
+                </li>
+                <li class="data_template_list">
+                    <div class="list-con clearfix">
+                        <div class="img">
+                            <img src="http://static.500d.me/upload/image/201511/601f66e2-e33e-4893-9f62-7b63647fe668-thumb.jpg"
+                                 alt="JM0217"/>
+                            <div class="hover-btn">
+                                <span class="huiyuan"></span>
+                                <a href="javascript:;" class="resume_change_template" data-itemid="240">选择</a>
+                            </div>
+                        </div>
+                        <div class="text">
+                            <a class="title">JM0217</a>
+                            <div class="bd clearfix"><span class="type">支持<i>PDF</i>下载</span><span
+                                    class="num">370306人使用</span></div>
+                        </div>
+                    </div>
+                </li>
+                <li class="data_template_list">
+                    <div class="list-con clearfix">
+                        <div class="img">
+                            <img src="http://static.500d.me/upload/image/201511/bbf9df4e-2c7a-4321-9fa5-5338d696cd48-thumb.jpg"
+                                 alt="JM0225"/>
+                            <div class="hover-btn">
+                                <span class="huiyuan"></span>
+                                <a href="javascript:;" class="resume_change_template" data-itemid="10">选择</a>
+                            </div>
+                        </div>
+                        <div class="text">
+                            <a class="title">JM0225</a>
+                            <div class="bd clearfix"><span class="type">支持<i>PDF</i>下载</span><span class="num">1161280人使用</span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="data_template_list">
+                    <div class="list-con clearfix">
+                        <div class="img">
+                            <img src="http://static.500d.me/upload/image/201511/486a812e-61ce-4088-a1d0-774e4ad9a3e9-thumb.jpg"
+                                 alt="JM0084"/>
+                            <div class="hover-btn">
+                                <span class="huiyuan"></span>
+                                <a href="javascript:;" class="resume_change_template" data-itemid="128">选择</a>
+                            </div>
+                        </div>
+                        <div class="text">
+                            <a class="title">JM0084</a>
+                            <div class="bd clearfix"><span class="type">支持<i>PDF</i>下载</span><span
+                                    class="num">267459人使用</span></div>
+                        </div>
+                    </div>
+                </li>
+                <li class="data_template_list">
+                    <div class="list-con clearfix">
+                        <div class="img">
+                            <img src="http://static.500d.me/upload/image/201511/89d54f3f-3f27-41f2-bc54-94cbfe862346-thumb.jpg"
+                                 alt="JM0106"/>
+                            <div class="hover-btn">
+                                <span class="huiyuan"></span>
+                                <a href="javascript:;" class="resume_change_template" data-itemid="223">选择</a>
+                            </div>
+                        </div>
+                        <div class="text">
+                            <a class="title">JM0106</a>
+                            <div class="bd clearfix"><span class="type">支持<i>PDF</i>下载</span><span
+                                    class="num">562293人使用</span></div>
+                        </div>
+                    </div>
+                </li>
+                <li class="data_template_list">
+                    <div class="list-con clearfix">
+                        <div class="img">
+                            <img src="http://static.500d.me/upload/image/201511/4d0b79ff-a6bb-435a-96e6-bdca51fa8b9c-thumb.jpg"
+                                 alt="JM0306"/>
+                            <div class="hover-btn">
+                                <span class="huiyuan"></span>
+                                <a href="javascript:;" class="resume_change_template" data-itemid="257">选择</a>
+                            </div>
+                        </div>
+                        <div class="text">
+                            <a class="title">JM0306</a>
+                            <div class="bd clearfix"><span class="type">支持<i>PDF</i>下载</span><span
+                                    class="num">580973人使用</span></div>
+                        </div>
+                    </div>
+                </li>
+                <li class="data_template_list">
+                    <div class="list-con clearfix">
+                        <div class="img">
+                            <img src="http://static.500d.me/upload/image/201511/82d87b8e-3b7d-4fbd-868d-5e4cb5e5dcdb-thumb.jpg"
+                                 alt="JM0205"/>
+                            <div class="hover-btn">
+                                <span class="huiyuan"></span>
+                                <a href="javascript:;" class="resume_change_template" data-itemid="77">选择</a>
+                            </div>
+                        </div>
+                        <div class="text">
+                            <a class="title">JM0205</a>
+                            <div class="bd clearfix"><span class="type">支持<i>PDF</i>下载</span><span
+                                    class="num">275069人使用</span></div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div style="text-align: center;" id="loadingBtn">点击加载更多</div>
+        <style>
+            .gotopShow {
+                display: block;
+                width: 40px;
+                height: 40px;
+                position: fixed;
+                bottom: 35px;
+                right: 10px;
+                cursor: pointer;
+                background: #989898 url(/resources/500d/images/gotop.png) no-repeat center 5px;
+                z-index: 10000;
+                transition: all 0.3s;
+            }
+        </style>
+        <a href="#top" class="gotop gotopShow"></a>
+    </div>
+</div>
+<!--提示框-->
+<!--支付方式提示框-->
+<!--是否验证邮箱-->
+<!--vip 包含了关闭窗口，支付功能，只有支付完成按钮的事件没有写，导入此页面记得需要重写支付完成按钮的事件-->
+<div class="vipModal">
+    <span class="closeBtn" id="closeBtn"></span>
+    <p class="text">HI，亲爱的五百丁用户，下载需要会员权限，请升级您的账户</p>
+    <ul class="con">
+        <li>
+            <div class="vipItem forever">
+                <h2>终身会员<span>终身有效，会员资格仅限在线编辑使用</span></h2>
+                <p>全部在线模板任意使用<br/> 可以使用所有编辑功能<br/> 可以使用网页版和手机简历<br/> 设置个人域名<br/> <i>PDF文件不限次数下载</i></p>
+                <span><s>￥</s>19.9</span>
+                <a class="payBtn" href="javaScript:;" p_id="1120">马上升级</a>
+            </div>
+        </li>
+        <li>
+            <div class="vipItem year">
+                <h2>年费版<span>从支付起一年内有效，会员资格仅限在线编辑使用</span></h2>
+                <p>全部在线模板任意使用<br/> 可以使用所有编辑功能<br/> 可以使用网页版和手机简历<br/> 设置个人域名<br/> <i>PDF文件不限次数下载</i></p>
+                <span><s>￥</s>9.9<s>/年</s></span>
+                <a class="payBtn" href="javaScript:;" p_id="1119">马上升级</a>
+            </div>
+        </li>
+        <li>
+            <div class="vipItem month">
+                <h2>月费版<span>从支付起一个月内有效，会员资格仅限在线编辑使用</span></h2>
+                <p>全部在线模板任意使用<br/> 可以使用所有编辑功能<br/> 可以使用网页版和手机简历<br/> 设置个人域名<br/> <i>PDF文件不限次数下载</i></p>
+                <span><s>￥</s>6.9<s>/月</s></span>
+                <a class="payBtn" href="javaScript:;" p_id="1118">马上升级</a>
+            </div>
+        </li>
+    </ul>
+</div>
+<!--提示框-->
+<!--支付方式提示框-->
+<div class="modal fade payModal" id="payModal">
+    <div class="modal-dialog" id="payMethod">
+        <div class="modal-content clearfix">
+            <div class="title"><h2>请选择支付方式</h2><span></span></div>
+            <div class="pbtn">
+                <a class="wx payType" pay_id="weixin" href="javaScript:;">微信支付</a>
+                <a class="zfb payType" href="javaScript:;" pay_id="alipay">支付宝</a>
+            </div>
+        </div>
+    </div>
+    <div class="modal-tips" style="display: none;" id="pay_tips">
+        <h2>支付提示</h2>
+        <p>支付完成前，请不要关闭此验证窗口。<br/>支付完成后，请根据您支付的情况点击下面按钮，或者重新刷新页面。</p>
+        <div class="pbtn"><a class="no" href="http://help.500d.me" target="blank">支付遇到问题</a><a class="yes"
+                                                                                               href="javaScript:;"
+                                                                                               id="yesBtn">支付完成</a>
+        </div>
+    </div>
+</div>
+<form id="suborderform" action="/member/order/create/" method="post" target="_blank" novalidate="novalidate">
+    <input type="hidden" name="productid" id="productid" value="">
+    <input type="hidden" name="paytype" id="paytype" value="">
+</form>
+<script type="text/javascript">
+    $(function () {
+        //关闭按钮
+        $("#closeBtn").click(function () {
+            $("div.vipModal").hide();
+            $("html").removeClass("open")
+        });
+        //支付按钮
+        $("a.payBtn").click(function () {
+            var $this = $(this);
+            var pid = $this.attr("p_id");
+            if (pid == null || pid == "") {
+                layer.msg('获取不到对应的购买信息，请保存简历后刷新重试');
+                return;
+            } else {
+                $("#productid").val(pid);
+                $("#pay_tips").hide();
+                $("#payMethod").show();
+                $('#payModal').modal('show');
+            }
+        });
+        //支付方式
+        $("a.payType").click(function () {
+            var payid = $(this).attr("pay_id");
+            if (payid == null || payid == "") {
+                layer.msg('获取不到对应的支付信息，请保存简历后刷新重试');
+                return;
+            } else {
+                $("#paytype").val(payid);
+            }
+            $("#suborderform").submit();
+            $("#pay_tips").show();
+            $("#payMethod").hide();
+        });
+        //免费下载判断
+        $("#freeDolwn").click(function () {
+            var data_type = $(this).attr("data_type");
+            if (data_type == null || data_type == "false") {
+                layer.msg('你不满足免费版的要求，请升级会员');
+            } else {
+                $("div.vipModal").hide();
+            }
+        });
+    });
+</script><!--保存提示框-->
+<div class="modal fade promptModal" id="saveModal">
+    <div class="modal-dialog">
+        <div class="modal-content clearfix">
+            <div class="left"><img src="http://static.500d.me/resources/500d/editresume/images/zxbj/save.png"/></div>
+            <div class="right text">
+                <br/>
+                <p>当前简历已保存成功</p>
+                <p class="p1">辛苦了，歇息一下吧</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--删除提示框-->
+<div class="modal fade promptModal" id="delModal">
+    <div class="modal-dialog">
+        <div class="modal-content clearfix">
+            <div class="left"><img src="http://static.500d.me/resources/500d/editresume/images/zxbj/error.png"/></div>
+            <div class="right text">
+                <p id="confirmContent">三思啊主公~<br/>执行删除操作后将无法恢复!</p>
+                <div class="mbtn">
+                    <button type="submit" id="confirmCancel" data-dismiss="modal" aria-hidden="true">朕再想想</button>
+                    <button class="reset" type="reset" id="confirmSuccess">朕意已决</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--删除简历提示框-->
+<div class="modal fade promptModal" id="delResumeModal">
+    <div class="modal-dialog">
+        <div class="modal-content clearfix">
+            <div class="left"><img src="http://static.500d.me/resources/500d/editresume/images/zxbj/error.png"/></div>
+            <div class="right text">
+                <p id="confirmContent">三思啊主公~<br/>执行删除操作后将无法恢复!</p>
+                <div class="mbtn">
+                    <button type="submit" id="confirmCancel" data-dismiss="modal" aria-hidden="true">朕再想想</button>
+                    <button class="reset" type="reset" id="confirm_del_resume_btn">朕意已决</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--导入提示框-->
+<div class="modal fade promptModal" id="imModal" style="z-index:9999999">
+    <div class="modal-dialog">
+        <div class="modal-content clearfix">
+            <div class="left"><img src="http://static.500d.me/resources/500d/editresume/images/zxbj/error.png"/></div>
+            <div class="right text">
+                <p>亲爱的主公~<br/>导入简历后原有的简历将被覆盖！</p>
+                <div class="mbtn">
+                    <button type="submit" data-dismiss="modal" aria-hidden="true">朕再想想</button>
+                    <button class="chang_resuem_cofr_btn reset" type="reset">朕意已决</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--简历选择编辑提示框-->
+<div class="modal fade promptModal" id="choose_other_resume_tips">
+    <div class="modal-dialog">
+        <div class="modal-content clearfix">
+            <div class="left"><img src="http://static.500d.me/resources/500d/editresume/images/zxbj/error.png"/></div>
+            <div class="right text">
+                <p>亲爱的主公~<br/>编辑其它简历，请记得保存当前简历哦！</p>
+                <div class="mbtn">
+                    <button type="submit" data-dismiss="modal" aria-hidden="true">朕再想想</button>
+                    <button class="choose_other_resume_confr_btn reset" type="reset">朕意已决</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--简历选择编辑提示框-->
+<div class="modal fade promptModal" id="create_new_resume_tips">
+    <div class="modal-dialog">
+        <div class="modal-content clearfix">
+            <div class="left"><img src="http://static.500d.me/resources/500d/editresume/images/zxbj/error.png"/></div>
+            <div class="right text">
+                <p>亲爱的主公~<br/>编辑其它简历，请记得保存当前简历哦！</p>
+                <div class="mbtn">
+                    <button type="submit" data-dismiss="modal" aria-hidden="true">朕再想想</button>
+                    <button class="create_new_resume_btn reset" type="reset">朕意已决</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--导入简历提示框 -->
+<div class="modal fade imResumeModal" id="imResumeModal">
+    <div class="modal-dialog">
+        <div class="modal-content clearfix">
+            <div class="modal-text">
+                <i class="wbdfont">&#xe75c;</i>
+                <p>请上传已有的本地简历<br/>(doc,docx,pdf)</p>
+                <div class="form-div  div_upload">
+                    <a href="javascript:;" class="file" id="improt_reume_file"><p></p><input type="file" name="filename"
+                                                                                             id="filename"/></a>
+                </div>
+                <button class="fbtn" id="improt_reume_btn">提交</button>
+            </div>
+            <div class="modal-text">
+                <i class="wbdfont">&#xe756;</i>
+                <p>复制在网站保存过的简历</p>
+                <div class="form-div">
+                    <select class="select select_change_resume">
+                        <option value="302053">中南大学_廖湘荡的简历</option>
+                    </select>
+                </div>
+                <button class="fbtn imBtn change_resume">提交</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--简历导入提示框-->
+<div class="modal fade promptModal" id="resume_import_tips">
+    <div class="modal-dialog">
+        <div class="modal-content clearfix">
+            <div class="left"><img src="http://static.500d.me/resources/500d/editresume/images/zxbj/error.png"/></div>
+            <div class="right text">
+                <p>亲爱的主公~<br/>导入简历正在研发中 敬请期待~</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--简历设置提示框   -->
+<div class="modal fade setResumeModal" id="setResumeModal">
+    <div class="modal-dialog">
+        <div class="modal-content clearfix">
+            <ul>
+                <li>
+                    <h2 class="mc">简历名称</h2>
+                    <input type="text" class="mc-input" id="webresumeTitle" value="Java开发工程师简历模板"/>
+                </li>
+                <li>
+                    <h2 class="ym">个性简历域名</h2>
+                    <span class="ym-span">http://www.500d.me/resume/
+					<input type="text" class="ym-input " value="" id="visitid"/>/
+					</span>
+                    <button class="dBtn copy_url_btn" style="display:inline">复制</button>
+                    <p>使用网页版简历，效率更高，赶快复制上面的链接发送给HR吧 </p>
+                </li>
+                <li>
+                    <h2 class="ys">隐私设置</h2>
+                    <div class="fradio"><input type="radio" name="visitType" checked
+                                               value="open"><label>开放查看</label><span>外部人士通过个性域名可查看简历内容，适合正在找工作时的状态</span>
+                    </div>
+                    <div class="fradio"><input type="radio" name="visitType" value="privary"/><label>不开放</label><span>如果您暂时不需要使用网页版简历，可以将简历状态设为不开放</span>
+                    </div>
+                </li>
+            </ul>
+            <button class="dBtn" id="privarySumBtn">确定</button>
+        </div>
+    </div>
+</div>
+<!--更换头像照片提示框 -->
+<div class="modal fade setHeadModal" id="setHeadModal">
+    <div class="modal-dialog">
+        <div class="modal-content clearfix">
+            <div class="modal-hd clearfix">
+                <div class="hd">
+                    <div class="cutout-img cut_out_img_head">
+                        <img src="/resources/500d/editresume/images/resume_upload_default.jpg"/>
+                    </div>
+                </div>
+                <div class="bd">
+                    <div class="clearfix img-preview-hd">
+                        <div class="img-preview img-preview-head preview-lg"></div>
+                        <div class="img-preview img-preview-head preview-md"></div>
+                        <div class="img-preview img-preview-head preview-sm"></div>
+                    </div>
+                </div>
+                <div class="cd clearfix head_image">
+                    <div class="left"><span class="l" data-method="rotate" data-option="-45"></span><span class="r"
+                                                                                                          data-method="rotate"
+                                                                                                          data-option="45"></span>
+                    </div>
+                    <div class="right setAspectRatio">
+                        <span data-method="setAspectRatio" data-option="1.7777777777777777">16:9</span>
+                        <span data-method="setAspectRatio" data-option="1.3333333333333333">4:3</span>
+                        <span data-method="setAspectRatio" data-option="1">1:1</span>
+                        <span class="checked" data-method="setAspectRatio" data-option="0.75">3:4</span>
+                        <span data-method="setAspectRatio" data-option="NaN">自由裁剪</span>
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-bd clearfix">
+                <div class="upload-img">
+                    <label class="btn btn-primary btn-upload" for="inputImage">
+                        <input class="sr-only" id="inputImage" name="file" type="file" accept="image/*">
+                        <span class="docs-tooltip" title="上传图片">
+			              <span class="icon icon-upload">本地上传</span>
+			            </span>
+                    </label>
+                    <p>支持格式：jpg、png,图片大小：1M以内</p>
+                </div>
+                <div class="upload-btn ">
+                    <button type="reset" class="cancel image_cancel">取消</button>
+                    <button type="button" id="upload_image_submit" class="submit">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--自定义图片插入框 -->
+<div class="modal fade setHeadModal" id="setCustomerImageModal">
+    <div class="modal-dialog">
+        <div class="modal-content clearfix">
+            <div class="modal-hd clearfix">
+                <div class="hd">
+                    <div class="cutout-img cut_out_custome_img">
+                        <img src="/resources/500d/editresume/images/resume_upload_default.jpg"/>
+                    </div>
+                </div>
+                <div class="bd">
+                    <div class="clearfix img-preview-hd">
+                        <div class="img-preview img-preview-custome preview-lg"></div>
+                        <div class="img-preview img-preview-custome preview-md"></div>
+                        <div class="img-preview img-preview-custome preview-sm"></div>
+                    </div>
+                </div>
+                <div class="cd clearfix customer_image">
+                    <div class="left"><span class="l" data-method="rotate" data-option="-45"></span><span class="r"
+                                                                                                          data-method="rotate"
+                                                                                                          data-option="45"></span>
+                    </div>
+                    <div class="right setAspectRatio">
+                        <span data-method="setAspectRatio" data-option="1.7777777777777777">16:9</span>
+                        <span data-method="setAspectRatio" data-option="1.3333333333333333">4:3</span>
+                        <span data-method="setAspectRatio" data-option="1">1:1</span>
+                        <span data-method="setAspectRatio" data-option="0.75">3:4</span>
+                        <span class="checked" data-method="setAspectRatio" data-option="NaN">自由裁剪</span>
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-bd clearfix">
+                <div class="upload-img">
+                    <label class="btn btn-primary btn-upload" for="imagefile_v4">
+                        <input class="sr-only" id="imagefile_v4" name="imagefile" type="file" accept="image/*">
+                        <span class="docs-tooltip" title="上传图片">
+			              <span class="icon icon-upload">本地上传</span>
+			            </span>
+                    </label>
+                    <p>支持格式：jpg、png,图片大小：1M以内</p>
+                </div>
+                <div class="upload-btn ">
+                    <button type="reset" class="cancel image_cancel">取消</button>
+                    <button type="submit" id="upload_image_submit_v4" class="submit">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--更换图标提示框-->
+<div class="modal fade setIconModal" id="myModalIcon">
+    <div class="modal-dialog">
+        <div class="modal-content clearfix">
+            <div class="icon-search"><input type="text" id="icon_search_value" placeholder="搜索你想要的图标..."/>
+                <button></button>
+            </div>
+            <div class="icon-nav">
+                <ul class="clearfix icon_type">
+                    <li><a data-type="" class="current" href="javascript:void(0);">全部</a></li>
+                    <li><a data-type="common" href="javascript:void(0);">通用</a></li>
+                    <li><a data-type="info" href="javascript:void(0);">个人信息</a></li>
+                    <li><a data-type="edu" href="javascript:void(0);">教育背景</a></li>
+                    <li><a data-type="work" href="javascript:void(0);">工作经历</a></li>
+                    <li><a data-type="skill" href="javascript:void(0);">技能证书</a></li>
+                    <li><a data-type="hobby" href="javascript:void(0);">兴趣爱好</a></li>
+                </ul>
+            </div>
+            <div class="icon-list">
+                <ul class="clearfix" id="icon_list">
+                    <li><a class="wbdfont">&#xe6ca;</a></li>
+                    <li><a class="wbdfont">&#xe6ca;</a></li>
+                    <li><a class="wbdfont">&#xe6ca;</a></li>
+                    <li><a class="wbdfont">&#xe6ca;</a></li>
+                    <li><a class="wbdfont">&#xe6ca;</a></li>
+                    <li><a class="wbdfont">&#xe6ca;</a></li>
+                    <li><a class="wbdfont">&#xe6ca;</a></li>
+                    <li><a class="wbdfont">&#xe6ca;</a></li>
+                    <li><a class="wbdfont">&#xe6ca;</a></li>
+                    <li><a class="wbdfont">&#xe6ca;</a></li>
+                    <li><a class="wbdfont">&#xe6ca;</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!--提示框end-->
+<!--添加模块-->
+<div class="modal fade addModal" id="myModalnrmk" data_version="v4">
+    <div class="modal-dialog">
+        <div class="modal-content clearfix">
+            <h2>添加文字模块</h2>
+            <ul>
+                <li class="title">
+                    <label>名称</label><input class="resume_name resume_v4" placeholder="名称"/>
+                </li>
+                <li class="time">
+                    <label>时间</label><input class="resume_time" placeholder="如不填则不显示"/>
+                    <label>单位</label><input class="resume_unit" placeholder="如不填则不显示"/>
+                    <label>岗位</label><input class="gw resume_job" placeholder="如不填则不显示"/>
+                </li>
+                <li>
+                    <label>说明</label><textarea class="resume_content" placeholder="说明"></textarea>
+                </li>
+            </ul>
+            <button class="dBtn add_module_confirm">确定</button>
+        </div>
+    </div>
+</div>
+<!--插入模块-->
+<div class="insertModal">
+    <div class="modal-content clearfix">
+        <p>勾选模块设置隐藏/显示</p>
+        <ul class="default resume_module" id="resume_module">
+            <li><span class="checked" for-id="resume_msg"></span>基本信息</li>
+            <li class="zp"><span class="checked" for-id="resume_head"></span>个人照片</li>
+            <li class="jy"><span class="checked" for-id="resume_edu"></span>教育背景</li>
+            <li class="gz"><span class="checked" for-id="resume_work"></span>工作经历</li>
+            <li class="jn"><span for-id="resume_cart"></span>技能证书</li>
+            <li class="pj"><span class="checked" for-id="resume_self"></span>自我评价</li>
+            <li class="xmj"><span class="checked" for-id="resume_project"></span>项目经验</li>
+            <li class="jx"><span for-id="resume_honor"></span>奖项荣誉</li>
+            <li class="xw"><span for-id="resume_out_school"></span>校外实践</li>
+            <li class="xn"><span for-id="resume_in_school"></span>校内实践</li>
+            <li class="rj"><span class="checked" for-id="resume_graph"></span>软件技能</li>
+            <li class="ah"><span class="checked" for-id="resume_icon"></span>兴趣爱好</li>
+            <li style="display:none"><span class="checked" for-id="resume_age"></span>年龄</li>
+            <li style="display:none"><span class="checked" for-id="resume_address"></span>居住地</li>
+            <li style="display:none"><span class="checked" for-id="resume_mobile"></span>手机</li>
+            <li style="display:none"><span class="checked" for-id="resume_email"></span>邮箱</li>
+        </ul>
+        <ul class="other">
+            <li><a id="intextBtn" href="javaScript:;">自定义文本</a></li>
+            <li><a id="resume_insert_image_v4" class="setImageBtn">自定义图片</a></li>
+        </ul>
+        <div class="insertBtn addBtn"><a href="javascript:;">添加模块</a></div>
+    </div>
+</div>
+<!--我的模板-->
+<div class="rsuemeModal">
+    <h2>我的简历</h2>
+    <ul class="zxjl-ul clearfix">
+        <li>
+            <div class="img">
+                <img src="http://static.500d.me/upload/image/201511/bbf9df4e-2c7a-4321-9fa5-5338d696cd48-thumb.jpg">
+                <div class="hover-div">
+                    <a class="edit btn choose_edit_other_resume" href="javascript:;"
+                       data_editpath="/editresume/resume/?itemid=10&resumeId=302053">编辑</a>
+                    <a class="delete del_resume" data_id="302053">删除</a>
+                </div>
+            </div>
+            <div class="text" href="javascript:;"><p>
+                <s>中南大学_廖湘荡的简历</s>
+                <a href="/editresume/export/?resume=302053&item=10" target="_blank"></a>
+            </p>
+                <i>最后一次编辑时间 2016-10-07 16:36</i></div>
+        </li>
+    </ul>
+</div>
+<script>
+    $(function () {
+        //设置会员,和简历ID
+        setMember(316775, 0);
+        //vip会员点击事件
+        $("#vipBtn").click(function () {
+            $(".vipModal").stop().slideDown(300);
+            $("html").addClass("open");
+        });
+        $(".listPdfDowln").click(function () {
+            $(".vipModal").stop().slideDown(300);
+        });
+        //删除简历
+        $("a.del_resume").click(function () {
+            $('#delResumeModal').modal('show');
+            var $this = $(this);
+            var data_id = $(this).attr("data_id");
+            $("#confirm_del_resume_btn").one("click", function () {
+                var url = "/editresume/delete/?resumeId=" + data_id;
+                $.get(url, function (message) {
+                    if (message.type == "success") {
+                        $this.parent().parent().parent().remove();
+                        $('#delResumeModal').modal('hide');
+                    } else {
+                        layer.msg(message.content);
+                    }
+                });
+            });
+        });
+        //简历复制
+        $(".imBtn").click(function () {
+            $('#imModal').modal('show');
+            var org_resumeId = $(".select_change_resume").val();
+            if (org_resumeId == null || org_resumeId == "") {
+                layer.msg("您还未创建过简历");
+                return;
+            }
+            var new_resumeId = $("#hidden_data_resume_id").val();
+            //简历导入确认
+            //简历复制确认
+            $(".chang_resuem_cofr_btn").one("click", function () {
+                var itemid = $(this).attr("itemid");
+                location.href = "/editresume/copy/resume/?itemId=206&org_resumeId=" + org_resumeId + "&new_resumeId=" + new_resumeId;
+            });
+            $("#imResumeModal").modal("hide");
+        });
+        //
+        $("#freeDolwn").attr("data_type", "true");
+        //个性域名
+        $("#resumeUrl").click(function () {
+            chcekVisitid();
+        });
+        //非VIP时个性域名提示
+        $(".vip_visitid_tips").click(function () {
+            layer.msg("修改个性域名需会员资格");
+        });
+        //生成个人简历
+        $("#privarySumBtn").click(function () {
+            var resumeId = $("#hidden_data_resume_id").val();
+            if (resumeId === "" || resumeId == null || resumeId == 0) {
+                layer.msg("先保存简历！");
+                return false;
+            }
+            var visitid = $("#visitid").val();
+            //判断个性域名是否有提交
+            var checkFlag = chcekVisitid();
+            console.log(checkFlag);
+            if (checkFlag != null && checkFlag == false) {
+                return false;
+            }
+            var visitType = $("input[name=visitType]:checked").val();
+
+            if (!visitType || visitType == "") {
+                layer.msg("请选择隐私设置类型！");
+                return false;
+            }
+            var title = $("#webresumeTitle").val();
+            if (title == null || title == "") {
+                layer.msg("请填写简历名称！");
+                return false;
+            }
+            //设置简历信息保密程度
+            $.post("/editresume/webresume/submit/", {
+                "id": resumeId,
+                "visitType": visitType,
+                "title": title
+            }, function (message) {
+                if (message.type == "success") {
+                    //layer.msg("设置成功");
+                    $("#setResumeModal").modal("hide");
+                    $("#resumeTitle").val(title);
+                } else {
+                    layer.msg(message.content);
+                }
+            });
+        });
+        function chcekVisitid() {
+            var resumeId = $("#hidden_data_resume_id").val();
+            if (resumeId === "" || resumeId == null || resumeId == 0) {
+                layer.msg("先保存简历！");
+                return false;
+            }
+            var visitid = $("#visitid").val();
+            var visitidRegex = /^[0-9a-z]{4,20}$/;
+            if (!visitid || !visitidRegex.test(visitid)) {
+                layer.msg("请填写4-20位的英文字母或数字的地址！");
+                return false;
+            }
+            var flag = true;
+            $.ajax({
+                url: "/resume/visitid/submit/?v=" + Math.random(),
+                async: false,
+                data: {"id": resumeId, "visitid": visitid},
+                dataType: "json",
+                success: function (message) {
+                    if (message.type == "error") {
+                        layer.msg(message.content);
+                        flag = false;
+                    } else {
+                        layer.msg("设置成功");
+                        flag = true;
+                    }
+                }
+            });
+            return flag;
+        }
+
+        //修改简历名称同步到隐私框
+        $("#resumeTitle").change(function () {
+            $("#webresumeTitle").val($(this).val());
+        });
+        //支付完成
+        $("#yesBtn").click(function () {
+            //获取是否是判断是否vip会员
+            $.get("/editresume/is_vip_download/", function (data) {
+                if (data.type == "success") {
+                    //vip支付成功，可以直接下载
+                    $("#payPdf").unbind("click");
+                    var resumeId = $("#hidden_data_resume_id").val();
+                    var cur_d_url = "/editresume/export/?resume=" + resumeId + "&item=" + $("#payPdf").attr("data_item_id");
+                    $("#payPdf").attr("href", cur_d_url);
+                    $("#payPdf").attr("target", "blank");
+
+                    //vip支付成功，可以直接下载
+                    $(".listPdfDowln").unbind("click");
+                    $(".listPdfDowln").each(function (index, ele) {
+                        var $ele = $(ele);
+                        var d_url = "/editresume/export/?resume=" + $ele.attr("data_resume_id") + "&item=" + $ele.attr("data_item_id");
+                        $ele.attr("href", d_url);
+                        $ele.attr("target", "blank");
+                    })
+                    $("#vipBtn").unbind("click");
+                    $("#vipBtn").attr("title", "vip会员 仅供在线编辑使用");
+                    $("#vipBtn").text(data.date + "到期");
+
+                    //移除非VIP提示
+                    $(".vip_visitid_tips").unbind("mouseover").removeAttr("readonly").removeClass("vip_visitid_tips");
+                }
+            });
+            $("#pay_tips").hide();
+            $('#payMethod').show();
+            $('#payModal').modal('hide');
+            $("div.vipModal").hide();
+        });
+        //选择其它简历编辑
+        $(".choose_edit_other_resume").click(function () {
+            var $this = $(this);
+            $('#choose_other_resume_tips').modal('show');
+            $(".choose_other_resume_confr_btn").one("click", function () {
+                location.href = $this.attr("data_editpath");
+            });
+        });
+        //图片框取消隐藏
+        $(".image_cancel").click(function () {
+            $(".setHeadModal").modal("hide");
+        });
+        //导入简历提示
+        $("#filename").live('change', function () {
+            var name = $("#filename").val();
+            $(".div_upload").find("p").text($(".div_upload").find("a").text() + name);
+        });
+
+        $("#improt_reume_btn").click(function () {
+            var name = $("#filename").val();
+            $(".div_upload").find("p").text(name);
+            var resumeId = $("#hidden_data_resume_id").val();
+            var resumeBankItem = "206";
+            var fileName = name.substring(name.lastIndexOf("\\") + 1);
+            var fileType = name.substring(name.lastIndexOf(".") + 1);
+            $("#fileName").val(fileName);
+            if (fileType.toLocaleLowerCase() != "doc" && fileType.toLocaleLowerCase() != "docx" && fileType.toLocaleLowerCase() != "pdf") {
+                alert("只支持pdf，doc，docx文件格式！");
+                return;
+            }
+            $.ajaxFileUpload({
+                type: 'post',
+                secureuri: false,
+                dataType: 'content',
+                fileElementId: 'filename',
+                url: '/editresume/upload/',
+                data: {"token": getCookie("token"), "resumeId": resumeId, "itemId": resumeBankItem},
+                success: function (data, status) {
+                    if (data == "error")
+                        alert("上传失败！");
+                    else {
+                        if (!isNaN(data)) {
+                            window.location = "/editresume/resume/?itemid=" + resumeBankItem + "&resumeId=" + data;
+                        } else {
+                            alert("上传失败！");
+                        }
+                    }
+                },
+                error: function (data, status, e) {
+                    alert("发生错误" + e);
+                }
+            });
+
+        });
+    });
+</script>
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?f2a5f48af9d935f4001ca4c8850ce7c0";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?e3536a6a3ab44f13b238e19790090eb5";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-79741486-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+<!--右侧浮块-->
+<div class="wbdzx-barR">
+    <a href="http://help.500d.me" target="_blank"><i class="wbdfont">&#xe766;</i>帮助</a>
+</div>
+<div class="wbdzx-header">
+    <div class="inner">
+        <div class="left">
+            <a class="logo" href="/"><img
+                    src="http://static.500d.me/resources/500d/editresume/images/zxbj/zx_logo.png"/></a>
+            <a class="return" href="/editresume/"><i class="wbdfont">&#xe758;</i>返回上一页</a>
+        </div>
+        <div class="center">
+            <div class="changeInput"><input type="text" id="resumeTitle" placeholder="点击修改简历名称"
+                                            data_value="Java开发工程师简历模板" value="Java开发工程师简历模板"></div>
+            <input type="hidden" id="hidden_data_resume_id" value=""/>
+            <input type="hidden" id="hidden_data_resume_language" value="zh"/>
+        </div>
+        <div class="right">
+            <div class="toolbar">
+                <ul>
+                    <li class="preview">
+                        <a href="/editresume/resume/?itemid=206&preview=true" id="preview_btn" target="_blank"><i
+                                class="wbdfont">&#xe764;</i>预览</a>
+                    </li>
+                    <li class="save">
+                        <a class="wbdfont saveBtn" href="javascript:;" title="保存">&#xe767;</a>
+                        &nbsp;
+                        <a class="wbdfont dlown_btn" href="javascript:;" title="下载PDF" data_item_id="206" id="payPdf">
+                            &#xe76b;</a>
+                    </li>
+                    <li class="upvip">
+                        <a class="vipBtn" title="vip会员 仅供在线编辑使用" href="javaScript:;">
+                            <i class="wbdfont">&#xe765;</i>
+                            终身会员
+                        </a>
+                    </li>
+                    <li>
+                        <a class="wbdfont" onclick="execCommand('undo')" href="javascript:;" title="撤销ctrl+z">
+                            &#xe76a;</a>
+                        <a class="wbdfont" onclick="execCommand('redo') " href="javascript:;" title="返回ctrl+y">
+                            &#xe769;</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="wbdzx-toolbar">
+    <ul>
+        <li><a class="iResumeBtn" href="javascript:;"><i class="wbdfont">&#xe75d;</i>模块管理</a></li>
+        <li><a class="imResumeBtn" href="javascript:;"><i class="wbdfont">&#xe76c;</i>导入简历</a></li>
+        <li><a class="setResumeBtn" href="javascript:;"><i class="wbdfont">&#xe75f;</i>简历设置</a></li>
+        <li><a class="uResumeBtn" href="javascript:;"><i class="wbdfont">&#xe768;</i>我的简历</a></li>
+    </ul>
+</div>
+<script>
+    $(function () {
+        $("#payPdf").click(function () {
+            var resumeId = $("#hidden_data_resume_id").val();
+            if (resumeId === "" || resumeId == null || resumeId == 0) {
+                layer.msg("先保存简历！");
+                return false;
+            }
+            var is_vip_falg = false;
+            $.ajax({
+                url: "/editresume/is_vip_download/",
+                async: false,
+                success: function (data) {
+                    if (data.type == "success") {
+                        is_vip_falg = true;
+                    }
+                }
+            });
+            if (is_vip_falg) {
+                var dlown_url = "/editresume/export/?item=206&resume=" + resumeId;
+                window.open(dlown_url);
+            } else {
+                $(".vipModal").stop().slideDown(300);
+                $("html").addClass("open");
+            }
+        });
+        //预览点击事件
+        //$("#preview_btn").click(function(){//预览按钮，保存和新窗口打开也页面
+        //	resumeSave();
+        //})
+        //$(".dlown_btn").click(function(){//下载按钮，保存和新窗口打开也页面
+        //	resumeSave();
+        //});
+
+    });
+</script>
+<div class="wbdzx-container ">
+
+
+    <div class="mb-toolbar">
+        <div class="inner">
+            <div class="left info">
+                <span>模板编号：<i>JM0203</i></span>
+                <span>使用人数：<i>10597155人</i></span><span>仅支持PDF下载</span>
+            </div>
+            <div class="right">
+                <div class="colorBox">
+                    <ul id="resume_style"></ul>
+                </div>
+                <div class="themeBox">
+                    <a id="changeBtn" href="javascript:;"><i class="wbdfont">&#xe75e;</i>更换模板</a>
+                </div>
+            </div>
+        </div>
+    </div>    <!--编辑区域-->
+    <div class="wbd-baseStyle clearfix jm0203_j1" id="resume_body" version="v4">
+        <!--自定图片-->
+        <!--自定文本-->
+        <div class="wbd-divTop"></div>
+
+        <div class="wbd-divLeft sortable" id="bar">
+            <div class="headDiv " id="resume_head">
+                <div class="inner">
+					<span class="headNotice">
+						<a href="javascript:;" class="delete delBtn resume_hidden" for-id="resume_head"></a>
+						<a href="javascript:;" class="choose setHeadBtn">更换照片</a>
+					</span>
+                    <!--真正需要提交的头像，-->
+                    <img class="resume_head" style="display:none"
+                         src="http://static.500d.me/resources/500d/editresume/images/default_head.png" width="150px"
+                         height="200"/>
+                    <div class="img-preview img-preview-head resume_head_div">
+                        <!--预览的头像-->
+                        <img src="http://static.500d.me/resources/500d/editresume/images/default_head.png"
+                             height="200"/>
+                    </div>
+                </div>
+            </div>
+            <div id="bar_sort"></div>
+            <div class="msgDiv baseItem baseSort resume_sort " id="resume_msg">
+                <dl>
+                    <dt class="clearfix">
+                        <a class="wbdfont setIconBtn resume_icon_diy" for-id="resume_msg" style="font-size:">
+                            &#xe6a0;</a>
+                        <span><div contenteditable="true" class="resume_tilte_name" for-key="singe_title"
+                                   for-value="html">个人信息</div></span>
+                    </dt>
+                    <dd class="clearfix resume_add_area">
+                        <div class="wbd-fontBar">
+                            <div class="inner">
+                                <div class='btn-group'>
+                                    <a class="abtn fontsize" href="javascript:;">字号
+                                        <select multiple="multiple">
+                                            <option value="1" style="font-size: 12px;">H1</option>
+                                            <option value="2" style="font-size: 14px;">H2</option>
+                                            <option value="3" style="font-size: 18px;">H3</option>
+                                            <option value="4" style="font-size: 24px;">H4</option>
+                                            <option value="5" style="font-size: 30px;">H5</option>
+                                            <option value="6" style="font-size: 36px;">H6</option>
+                                            <option value="7" style="font-size: 48px;">H7</option>
+                                        </select>
+                                    </a>
+                                </div>
+                                <div class='btn-group'>
+                                    <a class="abtn fontcolor" href="javascript:;">字体颜色<span></span>
+                                        <div class="fontColorS">
+                                            <div>
+                                                <ul class="clearfix">
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+
+                                                </ul>
+                                                <s class="cbtn">自定义</s>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="add resume_add" for-key="resume_msg" title="添加一项"></div>
+                                <div class="delete resume_hidden" for-id="resume_msg" title="隐藏此模块"></div>
+                            </div>
+                        </div>
+                        <div calss="resume_append_area">
+                            <div class="baseAge baseMsg baseDel resume_delete_area" id="resume_age">
+                                <div class="delete wbdfont resume_delete" for-id="resume_age">&#xe75b;</div>
+                                <a class="wbdfont setIconBtn resume_icon_diy" for-id="age" style="font-size:none"></a>
+                                <span class="age"><div class="resume_msg" notice-key="age" for-key="age"
+                                                       for-value="html" contenteditable="true">24岁</div></span>
+                            </div>
+                            <div class="baseAddress baseMsg baseDel resume_delete_area" id="resume_address">
+                                <div class="delete wbdfont resume_delete" for-id="resume_address">&#xe75b;</div>
+                                <a class="wbdfont setIconBtn resume_icon_diy" for-id="address"
+                                   style="font-size:none"></a>
+                                <span class="address"><div class="resume_msg" notice-key="address" for-key="address"
+                                                           for-value="html" contenteditable="true">广东省广州市</div></span>
+                            </div>
+                            <div class="baseMobile baseMsg baseDel resume_delete_area" id="resume_mobile">
+                                <div class="delete wbdfont resume_delete" for-id="resume_mobile">&#xe75b;</div>
+                                <a class=" wbdfont setIconBtn resume_icon_diy" for-id="mobile"
+                                   style="font-size:none"></a>
+                                <span class="phone"><div class="resume_msg" notice-key="mobile" for-key="mobile"
+                                                         for-value="html"
+                                                         contenteditable="true">13588888888</div></span>
+                            </div>
+                            <div class="baseEmail baseMsg baseDel resume_delete_area" id="resume_email">
+                                <div class="delete wbdfont resume_delete" for-id="resume_email">&#xe75b;</div>
+                                <a class="wbdfont setIconBtn resume_icon_diy" for-id="email"
+                                   style="font-size:none"></a>
+                                <span class="email"><div class="resume_msg" notice-key="email" for-key="email"
+                                                         for-value="html"
+                                                         contenteditable="true">service@500d.me</div></span>
+                            </div>
+                        </div>
+                    </dd>
+                </dl>
+            </div>
+
+            <div class="skillDiv baseItem baseSort resume_sort resume_graph " notice-key="resume_graph"
+                 id="resume_graph" for-key="resume_graph">
+                <dl>
+                    <dt class="clearfix">
+                        <a class="wbdfont setIconBtn resume_icon_diy" for-id="resume_graph" style="font-size:">
+                            &#xe6a1;</a>
+                        <span><div contenteditable="true" class="resume_tilte_name" for-key="graphs_title"
+                                   for-value="html">职业技能</div></span>
+                    </dt>
+                    <dd class="clearfix resume_add_area">
+                        <div class="wbd-fontBar">
+                            <div class="inner">
+                                <div class='btn-group'>
+                                    <a class="abtn fontsize" href="javascript:;">字号
+                                        <select multiple="multiple">
+                                            <option value="1" style="font-size: 12px;">H1</option>
+                                            <option value="2" style="font-size: 14px;">H2</option>
+                                            <option value="3" style="font-size: 18px;">H3</option>
+                                            <option value="4" style="font-size: 24px;">H4</option>
+                                            <option value="5" style="font-size: 30px;">H5</option>
+                                            <option value="6" style="font-size: 36px;">H6</option>
+                                            <option value="7" style="font-size: 48px;">H7</option>
+                                        </select>
+                                    </a>
+                                </div>
+                                <div class='btn-group'>
+                                    <a class="abtn fontcolor" href="javascript:;">字体颜色<span></span>
+                                        <div class="fontColorS">
+                                            <div>
+                                                <ul class="clearfix">
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+
+                                                </ul>
+                                                <s class="cbtn">自定义</s>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="add resume_add" for-key="resume_graph" title="添加一项"></div>
+                                <div class="delete resume_hidden" for-id="resume_graph" title="隐藏此模块"></div>
+                            </div>
+                        </div>
+                        <div class="resume_append_area">
+                            <div class="baseSkill baseDel resume_delete_area resume_graph_item">
+                                <div class="delete wbdfont resume_delete" for-id="resume_skill_graph">&#xe75b;</div>
+                                <div class="title resume_value" contenteditable="true" for-key="resume_skill_graph"
+                                     for-value="html">Java
+                                </div>
+                                <span class="line"><i class="resume_line" for-id="resume_skill_graph"
+                                                      style="width:128px;border-top-style:solid;border-top-width:8px;"></i></span>
+                            </div>
+                            <div class="baseSkill baseDel resume_delete_area resume_graph_item">
+                                <div class="delete wbdfont resume_delete" for-id="53815fa3293e57988958e27243b16870">
+                                    &#xe75b;</div>
+                                <div class="title resume_value" contenteditable="true"
+                                     for-key="53815fa3293e57988958e27243b16870" for-value="html">C++
+                                </div>
+                                <span class="line"><i class="resume_line" for-id="53815fa3293e57988958e27243b16870"
+                                                      style="width:128px;border-top-style:solid;border-top-width:8px;"></i></span>
+                            </div>
+                            <div class="baseSkill baseDel resume_delete_area resume_graph_item">
+                                <div class="delete wbdfont resume_delete" for-id="0fb2de17b37fd50c14ccda4d9b96bd94">
+                                    &#xe75b;</div>
+                                <div class="title resume_value" contenteditable="true"
+                                     for-key="0fb2de17b37fd50c14ccda4d9b96bd94" for-value="html">mysql
+                                </div>
+                                <span class="line"><i class="resume_line" for-id="0fb2de17b37fd50c14ccda4d9b96bd94"
+                                                      style="width:128px;border-top-style:solid;border-top-width:8px;"></i></span>
+                            </div>
+                            <div class="baseSkill baseDel resume_delete_area resume_graph_item">
+                                <div class="delete wbdfont resume_delete" for-id="0bab43524d96b1b58129f46097ee14b7">
+                                    &#xe75b;</div>
+                                <div class="title resume_value" contenteditable="true"
+                                     for-key="0bab43524d96b1b58129f46097ee14b7" for-value="html">jsp
+                                </div>
+                                <span class="line"><i class="resume_line" for-id="0bab43524d96b1b58129f46097ee14b7"
+                                                      style="width:128px;border-top-style:solid;border-top-width:8px;"></i></span>
+                            </div>
+                        </div>
+                    </dd>
+                </dl>
+            </div>
+
+            <div class="hobbyDiv baseItem baseSort resume_sort resume_add_area resume_icon " id="resume_icon">
+                <dl>
+                    <dt class="clearfix">
+                        <a class="wbdfont setIconBtn resume_icon_diy" for-id="resume_icon" style="font-size:">
+                            &#xe74a;</a>
+                        <span> <div contenteditable="true" class="resume_tilte_name" for-key="icons_title"
+                                    for-value="html">兴趣爱好</div></span>
+                    </dt>
+                    <dd class="clearfix resume_add_area">
+                        <div class="wbd-fontBar">
+                            <div class="inner">
+                                <div class='btn-group'>
+                                    <a class="abtn fontsize" href="javascript:;">字号
+                                        <select multiple="multiple">
+                                            <option value="1" style="font-size: 12px;">H1</option>
+                                            <option value="2" style="font-size: 14px;">H2</option>
+                                            <option value="3" style="font-size: 18px;">H3</option>
+                                            <option value="4" style="font-size: 24px;">H4</option>
+                                            <option value="5" style="font-size: 30px;">H5</option>
+                                            <option value="6" style="font-size: 36px;">H6</option>
+                                            <option value="7" style="font-size: 48px;">H7</option>
+                                        </select>
+                                    </a>
+                                </div>
+                                <div class='btn-group'>
+                                    <a class="abtn fontcolor" href="javascript:;">字体颜色<span></span>
+                                        <div class="fontColorS">
+                                            <div>
+                                                <ul class="clearfix">
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+
+                                                </ul>
+                                                <s class="cbtn">自定义</s>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="add resume_add" for-key="resume_icon" title="添加一项"></div>
+                                <div class="delete resume_hidden" for-id="resume_icon" title="隐藏此模块"></div>
+                            </div>
+                        </div>
+                        <div class="resume_append_area">
+                            <div class="baseHobby baseDel resume_delete_area resume_icon_item">
+                                <div class="delete wbdfont resume_delete">&#xe75b;</div>
+                                <a class="wbdfont setIconBtn resume_icon_diy" for-id="resume_hobby_icon"
+                                   style="font-size:none"></a>
+                                <div class="title resume_value" contenteditable="true" for-key="resume_hobby_icon"
+                                     for-value="html">篮球
+                                </div>
+                            </div>
+                            <div class="baseHobby baseDel resume_delete_area resume_icon_item">
+                                <div class="delete wbdfont resume_delete">&#xe75b;</div>
+                                <a class="wbdfont setIconBtn resume_icon_diy" for-id="9eff2552587f9d5970ebab85696208dc"
+                                   style="font-size:none"></a>
+                                <div class="title resume_value" contenteditable="true"
+                                     for-key="9eff2552587f9d5970ebab85696208dc" for-value="html">足球
+                                </div>
+                            </div>
+                            <div class="baseHobby baseDel resume_delete_area resume_icon_item">
+                                <div class="delete wbdfont resume_delete">&#xe75b;</div>
+                                <a class="wbdfont setIconBtn resume_icon_diy" for-id="162b8459a4a82554da5e6a12c2f21c8f"
+                                   style="font-size:none"></a>
+                                <div class="title resume_value" contenteditable="true"
+                                     for-key="162b8459a4a82554da5e6a12c2f21c8f" for-value="html">游戏
+                                </div>
+                            </div>
+                            <div class="baseHobby baseDel resume_delete_area resume_icon_item">
+                                <div class="delete wbdfont resume_delete">&#xe75b;</div>
+                                <a class="wbdfont setIconBtn resume_icon_diy" for-id="b3cf5ddaec3cbe67762a2d8d3df17f17"
+                                   style="font-size:none"></a>
+                                <div class="title resume_value" contenteditable="true"
+                                     for-key="b3cf5ddaec3cbe67762a2d8d3df17f17" for-value="html">摄影
+                                </div>
+                            </div>
+                        </div>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="wbd-divCenter"></div>
+        <div class="wbd-divRight sortable resume_main" id="foo">
+            <div class="nameDiv baseItem" id="resume_name">
+                <dl>
+                    <dt></dt>
+                    <dd>
+                        <div class="wbd-fontBar">
+                            <div class="inner">
+                                <div class="btn-group">
+                                    <a class="abtn fontsize" href="javascript:;">字号
+                                        <select multiple="multiple">
+                                            <option value="1" style="font-size: 12px;">H1</option>
+                                            <option value="2" style="font-size: 14px;">H2</option>
+                                            <option value="3" style="font-size: 18px;">H3</option>
+                                            <option value="4" style="font-size: 24px;">H4</option>
+                                            <option value="5" style="font-size: 30px;">H5</option>
+                                            <option value="6" style="font-size: 36px;">H6</option>
+                                            <option value="7" style="font-size: 48px;">H7</option>
+                                        </select>
+                                    </a>
+                                </div>
+                                <div class="btn-group">
+                                    <a class="abtn fontcolor" href="javascript:;">字体颜色<span></span>
+                                        <div class="fontColorS">
+                                            <div>
+                                                <ul class="clearfix">
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                </ul>
+                                                <s class="cbtn">自定义</s>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="btn-group">
+                                    <a class="abtn bold" href="javascript:;" title="加粗">加粗</a>
+                                    <a class="abtn italic" href="javascript:;" title="倾斜">倾斜</a>
+                                    <a class="abtn underline" href="javascript:;" title="下划线">下划线</a>
+                                </div>
+                                <div class="btn-group">
+                                    <a class="abtn justifyleft" href="javascript:;" title="居左">居左</a>
+                                    <a class="abtn justifycenter" href="javascript:;" title="居中">居中</a>
+                                    <a class="abtn justifyright" href="javascript:;" title="居右">居右</a>
+                                </div>
+                                <div class="btn-group">
+                                    <a class="abtn insertunorderedlist" href="javascript:;" title="无序列表">无序列表</a>
+                                    <a class="abtn insertorderedlist" href="javascript:;" title="有序列表">有序列表</a>
+                                    <a class="abtn indent" href="javascript:;" title="左缩进">左缩进</a>
+                                    <a class="abtn outdent" href="javascript:;" title="右缩进">右缩进</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h1>
+                                <div class="resume_msg" contenteditable="true" notice-key="msg" for-key="name"
+                                     for-value="html">五百丁
+                                </div>
+                            </h1>
+                            <h2>
+                                <div class="resume_msg" contenteditable="true" notice-key="msg" for-key="job"
+                                     for-value="html">求职目标：Java开发工程师
+                                </div>
+                            </h2>
+                        </div>
+                    </dd>
+                </dl>
+            </div>
+            <div id="foo_sort"></div>
+            <!--教育背景-->
+            <div class="experDiv baseItem baseSort resume_add_area resume_sort resume_item " notice-key="edu"
+                 id="resume_edu" for-key="edu">
+                <dl>
+                    <dt class="clearfix">
+                        <a class="wbdfont setIconBtn resume_icon_diy" for-id="edu" style="font-size:none"></a>
+                        <span><div contenteditable="true" class="resume_tilte_name" for-key="eduall_title"
+                                   for-value="html">教育背景</div></span>
+                    </dt>
+                    <dd class="clearfix resume_append_area">
+                        <div class="wbd-fontBar">
+                            <div class="inner">
+                                <div class="btn-group">
+                                    <a class="abtn fontsize" href="javascript:;">字号
+                                        <select multiple="multiple">
+                                            <option value="1" style="font-size: 12px;">H1</option>
+                                            <option value="2" style="font-size: 14px;">H2</option>
+                                            <option value="3" style="font-size: 18px;">H3</option>
+                                            <option value="4" style="font-size: 24px;">H4</option>
+                                            <option value="5" style="font-size: 30px;">H5</option>
+                                            <option value="6" style="font-size: 36px;">H6</option>
+                                            <option value="7" style="font-size: 48px;">H7</option>
+                                        </select>
+                                    </a>
+                                </div>
+                                <div class="btn-group">
+                                    <a class="abtn fontcolor" href="javascript:;">字体颜色<span></span>
+                                        <div class="fontColorS">
+                                            <div>
+                                                <ul class="clearfix">
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                </ul>
+                                                <s class="cbtn">自定义</s>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="btn-group">
+                                    <a class="abtn bold" href="javascript:;" title="加粗">加粗</a>
+                                    <a class="abtn italic" href="javascript:;" title="倾斜">倾斜</a>
+                                    <a class="abtn underline" href="javascript:;" title="下划线">下划线</a>
+                                </div>
+                                <div class="btn-group">
+                                    <a class="abtn justifyleft" href="javascript:;" title="居左">居左</a>
+                                    <a class="abtn justifycenter" href="javascript:;" title="居中">居中</a>
+                                    <a class="abtn justifyright" href="javascript:;" title="居右">居右</a>
+                                </div>
+                                <div class="btn-group">
+                                    <a class="abtn insertunorderedlist" href="javascript:;" title="无序列表">无序列表</a>
+                                    <a class="abtn insertorderedlist" href="javascript:;" title="有序列表">有序列表</a>
+                                    <a class="abtn indent" href="javascript:;" title="左缩进">左缩进</a>
+                                    <a class="abtn outdent" href="javascript:;" title="右缩进">右缩进</a>
+                                </div>
+                                <div class="add resume_add" for-key="resume_item" title="添加一项"></div>
+                                <div class="delete resume_hidden" for-id="resume_edu" title="隐藏此模块"></div>
+                            </div>
+                        </div>
+
+                        <div class="baseContent resume_item_items baseDel resume_delete_area">
+                            <div class="delete wbdfont resume_delete">&#xe75b;</div>
+                            <div class="conTitle clearfix">
+								<span class="time">
+									<div contenteditable="true" class="resume_time">2008.09-2012.07</div>
+								</span>
+                                <span class="company">
+									<div contenteditable="true" class="resume_unit">吉林大学</div>
+								</span>
+                                <span class="post">
+									<div contenteditable="true" class="resume_job">计算机科学与技术（本科）</div>
+								</span>
+                            </div>
+                            <div class="conText clearfix baseDel resume_delete_area" contenteditable="true">
+                                <div class="delete wbdfont resume_delete">&#xe75b;</div>
+                                <div class="resume_value">
+                                    <p>主修课程</p>
+                                    <p>
+                                        c++,java,数据结构，数据库概论，数据库应用，数字逻辑，汇编语言，EDA技术，Windows环境编程实践，操作系统，计算方法，J2EE，计算机网络，Linux操作系统，
+                                        计算机图形学，编译原理，微机接口技术。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </dd>
+                </dl>
+            </div>
+            <!--工作经历-->
+            <div class="eduDiv baseItem baseSort resume_item resume_add_area resume_sort resume_notice "
+                 notice-key="work" id="resume_work" for-key="work">
+                <dl>
+                    <dt class="clearfix">
+                        <a class="wbdfont setIconBtn resume_icon_diy" for-id="work" style="font-size:none"></a>
+                        <span><div contenteditable="true" class="resume_tilte_name" for-key="expercall_title"
+                                   for-value="html">工作经历</div></span>
+                    </dt>
+                    <dd class="clearfix resume_append_area">
+                        <div class="wbd-fontBar">
+                            <div class="inner">
+                                <div class="btn-group">
+                                    <a class="abtn fontsize" href="javascript:;">字号
+                                        <select multiple="multiple">
+                                            <option value="1" style="font-size: 12px;">H1</option>
+                                            <option value="2" style="font-size: 14px;">H2</option>
+                                            <option value="3" style="font-size: 18px;">H3</option>
+                                            <option value="4" style="font-size: 24px;">H4</option>
+                                            <option value="5" style="font-size: 30px;">H5</option>
+                                            <option value="6" style="font-size: 36px;">H6</option>
+                                            <option value="7" style="font-size: 48px;">H7</option>
+                                        </select>
+                                    </a>
+                                </div>
+                                <div class="btn-group">
+                                    <a class="abtn fontcolor" href="javascript:;">字体颜色<span></span>
+                                        <div class="fontColorS">
+                                            <div>
+                                                <ul class="clearfix">
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                </ul>
+                                                <s class="cbtn">自定义</s>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="btn-group">
+                                    <a class="abtn bold" href="javascript:;" title="加粗">加粗</a>
+                                    <a class="abtn italic" href="javascript:;" title="倾斜">倾斜</a>
+                                    <a class="abtn underline" href="javascript:;" title="下划线">下划线</a>
+                                </div>
+                                <div class="btn-group">
+                                    <a class="abtn justifyleft" href="javascript:;" title="居左">居左</a>
+                                    <a class="abtn justifycenter" href="javascript:;" title="居中">居中</a>
+                                    <a class="abtn justifyright" href="javascript:;" title="居右">居右</a>
+                                </div>
+                                <div class="btn-group">
+                                    <a class="abtn insertunorderedlist" href="javascript:;" title="无序列表">无序列表</a>
+                                    <a class="abtn insertorderedlist" href="javascript:;" title="有序列表">有序列表</a>
+                                    <a class="abtn indent" href="javascript:;" title="左缩进">左缩进</a>
+                                    <a class="abtn outdent" href="javascript:;" title="右缩进">右缩进</a>
+                                </div>
+                                <div class="add resume_add" for-key="resume_item" title="添加一项"></div>
+                                <div class="delete resume_hidden" for-id="resume_work" title="隐藏此模块"></div>
+                            </div>
+                        </div>
+                        <div class="baseContent resume_item_items baseDel resume_delete_area">
+                            <div class="delete wbdfont resume_delete">&#xe75b;</div>
+                            <div class="conTitle clearfix">
+								<span class="time">
+									<div class="resume_time" contenteditable="true">2014.6-至今</div>
+								</span>
+                                <span class="company"><div class="resume_unit"
+                                                           contenteditable="true">阿里巴巴 搜索事业部</div></span>
+                                <span class="post"><div class="resume_job" contenteditable="true">研发工程师</div></span>
+                            </div>
+                            <div class="conText clearfix baseDel resume_delete_area">
+                                <div class="delete wbdfont resume_delete">&#xe75b;</div>
+                                <div class="resume_value" contenteditable="true">
+                                    <p>1、负责公司内部业务系统的设计及改进，参与公司网上商城系统产品功能设计及实施工作。</p>
+                                    <p>2、负责客户调研、客户需求分析、方案写作等工作， 参与公司多个大型电子商务项目的策划工作，担任大商集团网上商城一期建设项目经理。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </dd>
+                </dl>
+            </div>
+
+            <!--自我评价-->
+            <div class="selfDiv baseItem baseSort resume_item resume_sort resume_notice " notice-key="self"
+                 id="resume_self" for-key="self">
+                <dl>
+                    <dt class="clearfix">
+                        <a class="wbdfont setIconBtn resume_icon_diy" for-id="self" style="font-size:none"></a>
+                        <span><div contenteditable="true" class="resume_tilte_name" for-key="self_title"
+                                   for-value="html">自我评价</div></span>
+                    </dt>
+                    <dd class="clearfix">
+                        <div class="wbd-fontBar">
+                            <div class="inner">
+                                <div class="btn-group">
+                                    <a class="abtn fontsize" href="javascript:;">字号
+                                        <select multiple="multiple">
+                                            <option value="1" style="font-size: 12px;">H1</option>
+                                            <option value="2" style="font-size: 14px;">H2</option>
+                                            <option value="3" style="font-size: 18px;">H3</option>
+                                            <option value="4" style="font-size: 24px;">H4</option>
+                                            <option value="5" style="font-size: 30px;">H5</option>
+                                            <option value="6" style="font-size: 36px;">H6</option>
+                                            <option value="7" style="font-size: 48px;">H7</option>
+                                        </select>
+                                    </a>
+                                </div>
+                                <div class="btn-group">
+                                    <a class="abtn fontcolor" href="javascript:;">字体颜色<span></span>
+                                        <div class="fontColorS">
+                                            <div>
+                                                <ul class="clearfix">
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                </ul>
+                                                <s class="cbtn">自定义</s>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="btn-group">
+                                    <a class="abtn bold" href="javascript:;" title="加粗">加粗</a>
+                                    <a class="abtn italic" href="javascript:;" title="倾斜">倾斜</a>
+                                    <a class="abtn underline" href="javascript:;" title="下划线">下划线</a>
+                                </div>
+                                <div class="btn-group">
+                                    <a class="abtn justifyleft" href="javascript:;" title="居左">居左</a>
+                                    <a class="abtn justifycenter" href="javascript:;" title="居中">居中</a>
+                                    <a class="abtn justifyright" href="javascript:;" title="居右">居右</a>
+                                </div>
+                                <div class="btn-group">
+                                    <a class="abtn insertunorderedlist" href="javascript:;" title="无序列表">无序列表</a>
+                                    <a class="abtn insertorderedlist" href="javascript:;" title="有序列表">有序列表</a>
+                                    <a class="abtn indent" href="javascript:;" title="左缩进">左缩进</a>
+                                    <a class="abtn outdent" href="javascript:;" title="右缩进">右缩进</a>
+                                </div>
+                                <div class="delete resume_hidden" for-id="resume_self" title="隐藏此模块"></div>
+                            </div>
+                        </div>
+                        <div class="baseContent">
+                            <div class="conText clearfix baseDel resume_delete_area">
+                                <div class="delete wbdfont resume_delete">&#xe75b;</div>
+                                <div class="resume_value" contenteditable="true">
+                                    <p>本人做事稳重，对待工作认真，责任心较强，待人真诚，善于沟通，时刻保持学习，积极拥抱变化。喜</p>
+                                    <p>欢java 开发，具备一定的软件分析、设计、开发和应用能力，拥有较强的学习能力与团队精神，能够</p>
+                                    <p>很快的适应工作环境。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </dd>
+                </dl>
+            </div>
+
+            <!--技能证书-->
+            <div class="resume_hidden_module cartDiv baseItem baseSort  resume_item resume_sort resume_notice"
+                 notice-key="cert" id="resume_cart" for-key="cart">
+                <dl>
+                    <dt class="clearfix">
+                        <a class="wbdfont setIconBtn resume_icon_diy" for-id="cart" style="font-size:none"></a>
+                        <span><div contenteditable="true" class="resume_tilte_name" for-key="cart_title"
+                                   for-value="html">技能证书</div></span>
+                    </dt>
+                    <dd class="clearfix">
+                        <div class="wbd-fontBar">
+                            <div class="inner">
+                                <div class="btn-group">
+                                    <a class="abtn fontsize" href="javascript:;">字号
+                                        <select multiple="multiple">
+                                            <option value="1" style="font-size: 12px;">H1</option>
+                                            <option value="2" style="font-size: 14px;">H2</option>
+                                            <option value="3" style="font-size: 18px;">H3</option>
+                                            <option value="4" style="font-size: 24px;">H4</option>
+                                            <option value="5" style="font-size: 30px;">H5</option>
+                                            <option value="6" style="font-size: 36px;">H6</option>
+                                            <option value="7" style="font-size: 48px;">H7</option>
+                                        </select>
+                                    </a>
+                                </div>
+                                <div class="btn-group">
+                                    <a class="abtn fontcolor" href="javascript:;">字体颜色<span></span>
+                                        <div class="fontColorS">
+                                            <div>
+                                                <ul class="clearfix">
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                </ul>
+                                                <s class="cbtn">自定义</s>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="btn-group">
+                                    <a class="abtn bold" href="javascript:;" title="加粗">加粗</a>
+                                    <a class="abtn italic" href="javascript:;" title="倾斜">倾斜</a>
+                                    <a class="abtn underline" href="javascript:;" title="下划线">下划线</a>
+                                </div>
+                                <div class="btn-group">
+                                    <a class="abtn justifyleft" href="javascript:;" title="居左">居左</a>
+                                    <a class="abtn justifycenter" href="javascript:;" title="居中">居中</a>
+                                    <a class="abtn justifyright" href="javascript:;" title="居右">居右</a>
+                                </div>
+                                <div class="btn-group">
+                                    <a class="abtn insertunorderedlist" href="javascript:;" title="无序列表">无序列表</a>
+                                    <a class="abtn insertorderedlist" href="javascript:;" title="有序列表">有序列表</a>
+                                    <a class="abtn indent" href="javascript:;" title="左缩进">左缩进</a>
+                                    <a class="abtn outdent" href="javascript:;" title="右缩进">右缩进</a>
+                                </div>
+                                <div class="delete resume_hidden" for-id="resume_cart" title="隐藏此模块"></div>
+                            </div>
+                        </div>
+                        <div class="baseContent">
+                            <div class="conText clearfix baseDel resume_delete_area">
+                                <div class="delete wbdfont resume_delete">&#xe75b;</div>
+                                <div class="resume_value" contenteditable="true">
+                                    <p>CET-6，优秀的听说写能力</p>
+                                    <p>计算机二级，熟悉计算机各项操作</p>
+                                    <p>高级营销员，国家职业资格四级</p>
+                                </div>
+                            </div>
+                        </div>
+                    </dd>
+                </dl>
+            </div>
+            <!--奖项荣誉-->
+            <div class="resume_hidden_module honorDiv baseItem baseSort  resume_item resume_sort resume_notice"
+                 notice-key="honor" id="resume_honor" for-key="honor">
+                <dl>
+                    <dt class="clearfix">
+                        <a class="wbdfont setIconBtn resume_icon_diy" for-id="honor" style="font-size:none"></a>
+                        <span><div contenteditable="true" class="resume_tilte_name" for-key="honor_title"
+                                   for-value="html">奖项荣誉</div></span>
+                    </dt>
+                    <dd class="clearfix">
+                        <div class="wbd-fontBar">
+                            <div class="inner">
+                                <div class="btn-group">
+                                    <a class="abtn fontsize" href="javascript:;">字号
+                                        <select multiple="multiple">
+                                            <option value="1" style="font-size: 12px;">H1</option>
+                                            <option value="2" style="font-size: 14px;">H2</option>
+                                            <option value="3" style="font-size: 18px;">H3</option>
+                                            <option value="4" style="font-size: 24px;">H4</option>
+                                            <option value="5" style="font-size: 30px;">H5</option>
+                                            <option value="6" style="font-size: 36px;">H6</option>
+                                            <option value="7" style="font-size: 48px;">H7</option>
+                                        </select>
+                                    </a>
+                                </div>
+                                <div class="btn-group">
+                                    <a class="abtn fontcolor" href="javascript:;">字体颜色<span></span>
+                                        <div class="fontColorS">
+                                            <div>
+                                                <ul class="clearfix">
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                </ul>
+                                                <s class="cbtn">自定义</s>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="btn-group">
+                                    <a class="abtn bold" href="javascript:;" title="加粗">加粗</a>
+                                    <a class="abtn italic" href="javascript:;" title="倾斜">倾斜</a>
+                                    <a class="abtn underline" href="javascript:;" title="下划线">下划线</a>
+                                </div>
+                                <div class="btn-group">
+                                    <a class="abtn justifyleft" href="javascript:;" title="居左">居左</a>
+                                    <a class="abtn justifycenter" href="javascript:;" title="居中">居中</a>
+                                    <a class="abtn justifyright" href="javascript:;" title="居右">居右</a>
+                                </div>
+                                <div class="btn-group">
+                                    <a class="abtn insertunorderedlist" href="javascript:;" title="无序列表">无序列表</a>
+                                    <a class="abtn insertorderedlist" href="javascript:;" title="有序列表">有序列表</a>
+                                    <a class="abtn indent" href="javascript:;" title="左缩进">左缩进</a>
+                                    <a class="abtn outdent" href="javascript:;" title="右缩进">右缩进</a>
+                                </div>
+                                <div class="delete resume_hidden" for-id="resume_honor" title="隐藏此模块"></div>
+                            </div>
+                        </div>
+                        <div class="baseContent">
+                            <div class="conText clearfix baseDel resume_delete_area">
+                                <div class="delete wbdfont resume_delete">&#xe75b;</div>
+                                <div class="resume_lang_honor_value resume_value" contenteditable="true">
+                                    <p>2009.10获国家奖学金</p>
+                                    <p>2010.11获“三好学生称号”</p>
+                                    <p>2010.12华南大学生创意营销大赛一等奖</p>
+                                    <p>2011.4挑战杯创业计划大赛省级铜奖</p>
+                                </div>
+                            </div>
+                        </div>
+                    </dd>
+                </dl>
+            </div>
+            <!--校外实践-->
+            <div class="resume_hidden_module outexperDiv baseItem baseSort  resume_item resume_add_area resume_sort resume_notice"
+                 notice-key="out_school" id="resume_out_school" for-key="out_school">
+                <dl>
+                    <dt class="clearfix">
+                        <a class="wbdfont setIconBtn resume_icon_diy" for-id="out_school" style="font-size:none"></a>
+                        <span><div contenteditable="true" class="resume_tilte_name" for-key="experball_title"
+                                   for-value="html">校外实践</div></span>
+                    </dt>
+                    <dd class="clearfix">
+                        <div class="wbd-fontBar">
+                            <div class="inner">
+                                <div class="btn-group">
+                                    <a class="abtn fontsize" href="javascript:;">字号
+                                        <select multiple="multiple">
+                                            <option value="1" style="font-size: 12px;">H1</option>
+                                            <option value="2" style="font-size: 14px;">H2</option>
+                                            <option value="3" style="font-size: 18px;">H3</option>
+                                            <option value="4" style="font-size: 24px;">H4</option>
+                                            <option value="5" style="font-size: 30px;">H5</option>
+                                            <option value="6" style="font-size: 36px;">H6</option>
+                                            <option value="7" style="font-size: 48px;">H7</option>
+                                        </select>
+                                    </a>
+                                </div>
+                                <div class="btn-group">
+                                    <a class="abtn fontcolor" href="javascript:;">字体颜色<span></span>
+                                        <div class="fontColorS">
+                                            <div>
+                                                <ul class="clearfix">
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                </ul>
+                                                <s class="cbtn">自定义</s>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="btn-group">
+                                    <a class="abtn bold" href="javascript:;" title="加粗">加粗</a>
+                                    <a class="abtn italic" href="javascript:;" title="倾斜">倾斜</a>
+                                    <a class="abtn underline" href="javascript:;" title="下划线">下划线</a>
+                                </div>
+                                <div class="btn-group">
+                                    <a class="abtn justifyleft" href="javascript:;" title="居左">居左</a>
+                                    <a class="abtn justifycenter" href="javascript:;" title="居中">居中</a>
+                                    <a class="abtn justifyright" href="javascript:;" title="居右">居右</a>
+                                </div>
+                                <div class="btn-group">
+                                    <a class="abtn insertunorderedlist" href="javascript:;" title="无序列表">无序列表</a>
+                                    <a class="abtn insertorderedlist" href="javascript:;" title="有序列表">有序列表</a>
+                                    <a class="abtn indent" href="javascript:;" title="左缩进">左缩进</a>
+                                    <a class="abtn outdent" href="javascript:;" title="右缩进">右缩进</a>
+                                </div>
+                                <div class="add resume_add" for-key="resume_item" title="添加一项"></div>
+                                <div class="delete resume_hidden" for-id="resume_out_school" title="隐藏此模块"></div>
+                            </div>
+                        </div>
+                        <div class="baseContent baseDel resume_item_items baseDel resume_delete_area">
+                            <div class="delete wbdfont resume_delete">&#xe75b;</div>
+                            <div class="conTitle clearfix">
+								<span class="time">
+									<div class="resume_time" contenteditable="true">2010.07-2010.09</div>
+								</span>
+                                <span class="company"><div class="resume_unit"
+                                                           contenteditable="true">一百丁科技集团</div></span>
+                                <span class="post"><div class="resume_job" contenteditable="true">市场部实习生</div></span>
+                            </div>
+                            <div class="conText clearfix baseDel resume_delete_area">
+                                <div class="delete wbdfont resume_delete">&#xe75b;</div>
+                                <div class="resume_value" contenteditable="true">
+                                    <p>协助筹备“不可思议”大型市场推广系列活动；</p>
+                                    <p>作为品牌大使向观众、来宾和媒体推广一百丁集团旗下的品牌；</p>
+                                    <p>联络各家媒体如南方都市晚报、广州日报，G4频道对本次活动进行报道；</p>
+                                </div>
+                            </div>
+                        </div>
+                    </dd>
+                </dl>
+            </div>
+            <!--校内实践-->
+            <div class="resume_hidden_module outexperDiv baseItem baseSort  resume_item resume_add_area resume_sort resume_notice"
+                 notice-key="in_school" id="resume_in_school" for-key="in_school">
+                <dl>
+                    <dt class="clearfix">
+                        <a class="wbdfont setIconBtn resume_icon_diy" for-id="in_school" style="font-size:none"></a>
+                        <span><div contenteditable="true" class="resume_tilte_name" for-key="experall_title"
+                                   for-value="html">校内实践</div></span>
+                    </dt>
+                    <dd class="clearfix resume_append_area">
+                        <div class="wbd-fontBar">
+                            <div class="inner">
+                                <div class="btn-group">
+                                    <a class="abtn fontsize" href="javascript:;">字号
+                                        <select multiple="multiple">
+                                            <option value="1" style="font-size: 12px;">H1</option>
+                                            <option value="2" style="font-size: 14px;">H2</option>
+                                            <option value="3" style="font-size: 18px;">H3</option>
+                                            <option value="4" style="font-size: 24px;">H4</option>
+                                            <option value="5" style="font-size: 30px;">H5</option>
+                                            <option value="6" style="font-size: 36px;">H6</option>
+                                            <option value="7" style="font-size: 48px;">H7</option>
+                                        </select>
+                                    </a>
+                                </div>
+                                <div class="btn-group">
+                                    <a class="abtn fontcolor" href="javascript:;">字体颜色<span></span>
+                                        <div class="fontColorS">
+                                            <div>
+                                                <ul class="clearfix">
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                </ul>
+                                                <s class="cbtn">自定义</s>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="btn-group">
+                                    <a class="abtn bold" href="javascript:;" title="加粗">加粗</a>
+                                    <a class="abtn italic" href="javascript:;" title="倾斜">倾斜</a>
+                                    <a class="abtn underline" href="javascript:;" title="下划线">下划线</a>
+                                </div>
+                                <div class="btn-group">
+                                    <a class="abtn justifyleft" href="javascript:;" title="居左">居左</a>
+                                    <a class="abtn justifycenter" href="javascript:;" title="居中">居中</a>
+                                    <a class="abtn justifyright" href="javascript:;" title="居右">居右</a>
+                                </div>
+                                <div class="btn-group">
+                                    <a class="abtn insertunorderedlist" href="javascript:;" title="无序列表">无序列表</a>
+                                    <a class="abtn insertorderedlist" href="javascript:;" title="有序列表">有序列表</a>
+                                    <a class="abtn indent" href="javascript:;" title="左缩进">左缩进</a>
+                                    <a class="abtn outdent" href="javascript:;" title="右缩进">右缩进</a>
+                                </div>
+                                <div class="add resume_add" for-key="resume_item" title="添加一项"></div>
+                                <div class="delete resume_hidden" for-id="resume_in_school" title="隐藏此模块"></div>
+                            </div>
+                        </div>
+                        <div class="baseContent baseDel resume_item_items baseDel resume_delete_area">
+                            <div class="delete wbdfont resume_delete">&#xe75b;</div>
+                            <div class="conTitle clearfix">
+								<span class="time">
+									<div class="resume_time" contenteditable="true">2009.03-2011.06</div>
+								</span>
+                                <span class="company"><div class="resume_unit"
+                                                           contenteditable="true">五百丁大学职业发展社</div></span>
+                                <span class="post"><div class="resume_job" contenteditable="true">社长</div></span>
+                            </div>
+                            <div class="conText clearfix baseDel resume_delete_area">
+                                <div class="delete wbdfont resume_delete">&#xe75b;</div>
+                                <div class="resume_value" contenteditable="true">
+                                    <p>负责社团组织建设，社团机构的管理，协调各部门工作；</p>
+                                    <p>组织策划社团的成立大会、竞选会、团队培训、招新等运维活动；</p>
+                                </div>
+                            </div>
+                        </div>
+                    </dd>
+                </dl>
+            </div>
+            <!--项目经验-->
+            <div class="outexperDiv baseItem baseSort  resume_item resume_add_area resume_sort resume_notice"
+                 notice-key="project" id="resume_project" for-key="project">
+                <dl>
+                    <dt class="clearfix">
+                        <a class="wbdfont setIconBtn resume_icon_diy" for-id="project" style="font-size:none"></a>
+                        <span><div contenteditable="true" class="resume_tilte_name" for-key="experdall_title"
+                                   for-value="html">项目经验</div></span>
+                    </dt>
+                    <dd class="clearfix resume_append_area">
+                        <div class="wbd-fontBar">
+                            <div class="inner">
+                                <div class="btn-group">
+                                    <a class="abtn fontsize" href="javascript:;">字号
+                                        <select multiple="multiple">
+                                            <option value="1" style="font-size: 12px;">H1</option>
+                                            <option value="2" style="font-size: 14px;">H2</option>
+                                            <option value="3" style="font-size: 18px;">H3</option>
+                                            <option value="4" style="font-size: 24px;">H4</option>
+                                            <option value="5" style="font-size: 30px;">H5</option>
+                                            <option value="6" style="font-size: 36px;">H6</option>
+                                            <option value="7" style="font-size: 48px;">H7</option>
+                                        </select>
+                                    </a>
+                                </div>
+                                <div class="btn-group">
+                                    <a class="abtn fontcolor" href="javascript:;">字体颜色<span></span>
+                                        <div class="fontColorS">
+                                            <div>
+                                                <ul class="clearfix">
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                </ul>
+                                                <s class="cbtn">自定义</s>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="btn-group">
+                                    <a class="abtn bold" href="javascript:;" title="加粗">加粗</a>
+                                    <a class="abtn italic" href="javascript:;" title="倾斜">倾斜</a>
+                                    <a class="abtn underline" href="javascript:;" title="下划线">下划线</a>
+                                </div>
+                                <div class="btn-group">
+                                    <a class="abtn justifyleft" href="javascript:;" title="居左">居左</a>
+                                    <a class="abtn justifycenter" href="javascript:;" title="居中">居中</a>
+                                    <a class="abtn justifyright" href="javascript:;" title="居右">居右</a>
+                                </div>
+                                <div class="btn-group">
+                                    <a class="abtn insertunorderedlist" href="javascript:;" title="无序列表">无序列表</a>
+                                    <a class="abtn insertorderedlist" href="javascript:;" title="有序列表">有序列表</a>
+                                    <a class="abtn indent" href="javascript:;" title="左缩进">左缩进</a>
+                                    <a class="abtn outdent" href="javascript:;" title="右缩进">右缩进</a>
+                                </div>
+                                <div class="add resume_add" for-key="resume_item" title="添加一项"></div>
+                                <div class="delete resume_hidden" for-id="resume_project" title="隐藏此模块"></div>
+                            </div>
+                        </div>
+                        <div class="baseContent baseDel resume_item_items baseDel resume_delete_area">
+                            <div class="delete wbdfont resume_delete">&#xe75b;</div>
+                            <div class="conTitle clearfix">
+								<span class="time">
+									<div class="resume_time" contenteditable="true">2013.6-2013.9</div>
+								</span>
+                                <span class="company"><div class="resume_unit"
+                                                           contenteditable="true">wrapper开发</div></span>
+                                <span class="post"><div class="resume_job" contenteditable="true"></div></span>
+                            </div>
+                            <div class="conText clearfix baseDel resume_delete_area">
+                                <div class="delete wbdfont resume_delete">&#xe75b;</div>
+                                <div class="resume_value" contenteditable="true">
+                                    <p>负责机票事业部航班信息的抓取工作；主要参与开发抓取不同航空公司航班信息的wrapper，将抓回</p>
+                                    <p>的数据解析成约定的格式，供机票查询结果使用</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="baseContent baseDel resume_item_items baseDel resume_delete_area">
+                            <div class="delete wbdfont resume_delete">&#xe75b;</div>
+                            <div class="conTitle clearfix">
+								<span class="time">
+									<div class="resume_time" contenteditable="true">2014.6-至今</div>
+								</span>
+                                <span class="company"><div class="resume_unit" contenteditable="true">反作弊</div></span>
+                                <span class="post"><div class="resume_job" contenteditable="true"></div></span>
+                            </div>
+                            <div class="conText clearfix baseDel resume_delete_area">
+                                <div class="delete wbdfont resume_delete">&#xe75b;</div>
+                                <div class="resume_value" contenteditable="true">
+                                    <p>角色：主要开发</p>
+                                    <p>系统介绍：魔戒是一个处罚卖家作弊的平台，举报供运营同学处理举报的工具，白名单提供存储和查</p>
+                                    <p>询商品、卖家、类目白名单的服务</p>
+                                    <p>主要工作：负责魔戒、举报和白名单的日常维护和开发</p>
+                                    <p>技术：php、mysql</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="baseContent baseDel resume_item_items baseDel resume_delete_area">
+                            <div class="delete wbdfont resume_delete">&#xe75b;</div>
+                            <div class="conTitle clearfix">
+								<span class="time">
+									<div class="resume_time" contenteditable="true">2015.1-2015.3</div>
+								</span>
+                                <span class="company"><div class="resume_unit" contenteditable="true">淘宝来测吧</div></span>
+                                <span class="post"><div class="resume_job" contenteditable="true">职位</div></span>
+                            </div>
+                            <div class="conText clearfix baseDel resume_delete_area">
+                                <div class="delete wbdfont resume_delete">&#xe75b;</div>
+                                <div class="resume_value" contenteditable="true">
+                                    <p>角色：后端开发</p>
+                                    <p>系统介绍：淘宝来测吧是一个众测系统，面向云客服的一个付费系统，对用户权限校验，题目的数量</p>
+                                    <p>控制的准确性都要求比较高</p>
+                                    <p>工作：负责后端开发，包括发题、答题、回收题目和权限校验等</p>
+                                    <p>技术：yii框架、memcached缓存和mysql</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="baseContent baseDel resume_item_items baseDel resume_delete_area">
+                            <div class="delete wbdfont resume_delete">&#xe75b;</div>
+                            <div class="conTitle clearfix">
+								<span class="time">
+									<div class="resume_time" contenteditable="true">2015.4-至今</div>
+								</span>
+                                <span class="company"><div class="resume_unit" contenteditable="true">淘宝主搜索</div></span>
+                                <span class="post"><div class="resume_job" contenteditable="true"></div></span>
+                            </div>
+                            <div class="conText clearfix baseDel resume_delete_area">
+                                <div class="delete wbdfont resume_delete">&#xe75b;</div>
+                                <div class="resume_value" contenteditable="true">
+                                    <p>角色：业务端开发</p>
+                                    <p>系统介绍：主搜索支撑阿里集团的搜索服务</p>
+                                    <p>工作：1、作为PM负责产品搜和主搜的java迁移；2、主搜日常需求的开发和维护</p>
+                                    <p>技术：java、spring、webx</p>
+                                </div>
+                            </div>
+                        </div>
+                    </dd>
+                </dl>
+            </div>
+            <div class="wbd-addBtn">
+                <a><i class="wbdfont">&#xe82f;</i><span>添加模块</span></a>
+            </div>
+        </div>
+        <div class="wbd-divBottom"></div>
+    </div>
+</div>
+<div style="height:200px;"></div>
+<script type="text/javascript">
+    addMessage.get_resume_msg = function () {
+        var guid = uuid();
+        return '<div class="baseAge baseMsg baseDel resume_delete_area">\
+					<div class="delete wbdfont resume_delete">&#xe75b;</div>\
+					<a class="wbdfont setIconBtn resume_icon_diy" for-id="' + guid + '">&#xe602;</a>\
+					<span class="age">\
+						<div class="resume_msg" notice-key="age" for-type="custom" for-key="' + guid + '" for-value="html" contenteditable="true">自定义</div>\
+					<\/span>\
+				<\/div>'
+    };
+    addMessage.get_resume_graph = function () {
+        var guid = uuid();
+        return '<div class="baseSkill baseDel resume_delete_area resume_graph_item">\
+							<div class="delete wbdfont resume_delete"  for-id="' + guid + '">&#xe75b;</div>\
+							<div class="title resume_value" contenteditable="true" for-key="' + guid + '"  for-value="html">技能名称</div>\
+							<span class="line"><i class="resume_line" for-id="' + guid + '"></i></span>\
+						<\/div>';
+    }
+    addMessage.get_resume_icon = function () {
+        var guid = uuid();
+        return '<div class="baseHobby baseDel resume_delete_area resume_icon_item">\
+							<div class="delete wbdfont resume_delete">&#xe75b;</div>\
+							<a class="wbdfont setIconBtn resume_icon_diy"  for-id="' + guid + '">&#xe698;</a>\
+							<div class="title resume_value" contenteditable="true" for-key="' + guid + '" for-value="html">兴趣爱好</div>\
+						</div>';
+    }
+    addMessage.get_resume_item = function () {
+        return '<div class="baseContent resume_item_items baseDel resume_delete_area">\
+						<div class="delete wbdfont resume_delete">&#xe75b;</div>\
+						<div class="conTitle clearfix">\
+							<span class="time">\
+								<div class="resume_time" contenteditable="true" >xxxx.xx-xxxx.xxxx</div>\
+							</span>\
+							<span class="company"><div  class="resume_unit" contenteditable="true" >单位</div></span>\
+							<span class="post"><div  class="resume_job" contenteditable="true" >职位</div></span>\
+						</div>\
+						<div class="conText clearfix baseDel resume_delete_area">\
+							<div class="delete wbdfont resume_delete">&#xe75b;</div>\
+							<div class="resume_value" contenteditable="true">\
+							<p>内容</p>\
+							</div>\
+						</div>\
+					</div>';
+    }
+    addMessage.get_resume_item_area = function () {
+        var guid = uuid();
+        return '<div class="baseItem baseSort resume_custom resume_add_area resume_sort resume_custom_delete_area" id="' + guid + '" for-key="' + guid + '">\
+						<dl>\
+							<dt  class="clearfix">\
+								<a class="wbdfont setIconBtn resume_icon_diy" for-id="' + guid + '">&#xe69e;</a>\
+								<span><div class="resume_name" contenteditable="true">自定义</div></span>\
+							</dt>\
+							<dd class="clearfix">\
+<div  class="wbd-fontBar">\
+	<div class="inner">\
+		<div class="btn-group">\
+			<a class="abtn fontsize" href="javascript:;">字号\
+				<select multiple="multiple">\
+					<option value="1" style="font-size: 12px;">H1</option>\
+					<option value="2" style="font-size: 14px;">H2</option>\
+					<option value="3" style="font-size: 18px;">H3</option>\
+					<option value="4" style="font-size: 24px;">H4</option>\
+					<option value="5" style="font-size: 30px;">H5</option>\
+					<option value="6" style="font-size: 36px;">H6</option>\
+					<option value="7" style="font-size: 48px;">H7</option>\
+				</select>\
+			</a>\
+		</div>\
+		<div class="btn-group">\
+				<a class="abtn fontcolor" href="javascript:;">字体颜色<span></span>\
+				<div class="fontColorS">\
+					<div>\
+					<ul class="clearfix">\
+						<li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>\
+					</ul>\
+					<s class="cbtn">自定义</s>\
+					</div>\
+				</div>\
+			</a>\
+		</div>\
+		<div class="btn-group">\
+			<a class="abtn bold"  href="javascript:;" title="加粗">加粗</a>\
+			<a class="abtn italic" href="javascript:;" title="倾斜">倾斜</a>\
+			<a class="abtn underline" href="javascript:;" title="下划线">下划线</a>\
+		</div>\
+		<div class="btn-group">\
+			<a class="abtn justifyleft" href="javascript:;" title="居左">居左</a>\
+			<a class="abtn justifycenter" href="javascript:;" title="居中">居中</a>\
+			<a class="abtn justifyright" href="javascript:;" title="居右">居右</a>\
+		</div>\
+		<div class="btn-group">\
+			<a class="abtn insertunorderedlist" href="javascript:;" title="无序列表">无序列表</a>\
+			<a class="abtn insertorderedlist" href="javascript:;" title="有序列表">有序列表</a>\
+			<a class="abtn indent" href="javascript:;" title="左缩进">左缩进</a>\
+			<a class="abtn outdent" href="javascript:;" title="右缩进">右缩进</a>\
+		</div>\
+		<div class="delete resume_hidden" for-id="' + guid + '" title="隐藏此模块"></div>\
+	</div>\
+</div>\
+							<div class="baseContent resume_item_items">\
+								<div class="conText clearfix baseDel resume_delete_area">\
+									<div class="delete wbdfont resume_delete_">&#xe75b;</div>\
+									<div class="resume_value" contenteditable="true">\
+									<p>主修课程</p>\
+									<p>主修课程： 设计概论、字体设计、室内设计、 标志设计、包装设计、设计素描、制图、立体构成、平面设计、展示设计、环境设计、中外美术鉴赏、基础软件。</p>\
+									</div>\
+								</div>\
+							</div>\
+							</dd>\
+						</dl>\
+					</div>';
+    }
+    //含时间自定义项
+    addMessage.get_resume_items_area = function () {
+        var guid = uuid();
+        return '<div class="baseItem baseSort resume_custom resume_add_area resume_sort resume_custom_delete_area" id="' + guid + '" for-key="' + guid + '">\
+						<dl>\
+							<dt  class="clearfix">\
+								<a class="wbdfont setIconBtn resume_icon_diy" for-id="' + guid + '">&#xe69e;</a>\
+								<span><div class="resume_name" contenteditable="true">自定义</div></span>\
+							</dt>\
+							<dd class="clearfix resume_append_area">\
+<div  class="wbd-fontBar">\
+	<div class="inner">\
+		<div class="btn-group">\
+			<a class="abtn fontsize" href="javascript:;">字号\
+				<select multiple="multiple">\
+					<option value="1" style="font-size: 12px;">H1</option>\
+					<option value="2" style="font-size: 14px;">H2</option>\
+					<option value="3" style="font-size: 18px;">H3</option>\
+					<option value="4" style="font-size: 24px;">H4</option>\
+					<option value="5" style="font-size: 30px;">H5</option>\
+					<option value="6" style="font-size: 36px;">H6</option>\
+					<option value="7" style="font-size: 48px;">H7</option>\
+				</select>\
+			</a>\
+		</div>\
+		<div class="btn-group">\
+				<a class="abtn fontcolor" href="javascript:;">字体颜色<span></span>\
+				<div class="fontColorS">\
+					<div>\
+					<ul class="clearfix">\
+						<li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>\
+					</ul>\
+					<s class="cbtn">自定义</s>\
+					</div>\
+				</div>\
+			</a>\
+		</div>\
+		<div class="btn-group">\
+			<a class="abtn bold"  href="javascript:;" title="加粗">加粗</a>\
+			<a class="abtn italic" href="javascript:;" title="倾斜">倾斜</a>\
+			<a class="abtn underline" href="javascript:;" title="下划线">下划线</a>\
+		</div>\
+		<div class="btn-group">\
+			<a class="abtn justifyleft" href="javascript:;" title="居左">居左</a>\
+			<a class="abtn justifycenter" href="javascript:;" title="居中">居中</a>\
+			<a class="abtn justifyright" href="javascript:;" title="居右">居右</a>\
+		</div>\
+		<div class="btn-group">\
+			<a class="abtn insertunorderedlist" href="javascript:;" title="无序列表">无序列表</a>\
+			<a class="abtn insertorderedlist" href="javascript:;" title="有序列表">有序列表</a>\
+			<a class="abtn indent" href="javascript:;" title="左缩进">左缩进</a>\
+			<a class="abtn outdent" href="javascript:;" title="右缩进">右缩进</a>\
+		</div>\
+		<div class="add resume_add" for-key="resume_item" title="添加一项"></div>\
+		<div class="delete resume_hidden" for-id="' + guid + '" title="隐藏此模块"></div>\
+	</div>\
+</div>\
+							<div class="baseContent resume_item_items">\
+							<div class="conTitle clearfix">\
+								<span class="time">\
+									<div class="resume_time"  contenteditable="true" >xxxx.xx-xxxx.xxxx</div>\
+								</span>\
+								<span class="company">\
+									<div  class="resume_unit" contenteditable="true" >单位</div>\
+								</span>\
+								<span class="post">\
+									<div class="resume_job" contenteditable="true" >职位</div>\
+								</span>\
+								</div>\
+								<div class="conText clearfix baseDel resume_delete_area">\
+									<div class="delete wbdfont resume_delete_">&#xe75b;</div>\
+									<div class="resume_value" contenteditable="true">\
+									<p>主修课程</p>\
+									<p>主修课程： 设计概论、字体设计、室内设计、 标志设计、包装设计、设计素描、制图、立体构成、平面设计、展示设计、环境设计、中外美术鉴赏、基础软件。</p>\
+									</div>\
+								</div>\
+							</div>\
+							</dd>\
+						</dl>\
+					</div>';
+    }
+    // setSquare(true, true); // 圆头
+    setTheme(206);
+    resumeStyle([{"jm0203_j1": "254665"}, {"jm0203_j2": "dd415e"}, {"jm0203_j3": "967a5b"}, {"jm0203_j4": "3390cd"}, {"jm0203_j5": "f54f4f"}, {"jm0203_j6": "4d4d4d"}, {"jm0203_j7": "aa8460"}, {"jm0203_j8": "76ba31"}, {"jm0203_j9": "647ec9"}], "jm0203_j1");
+    resumeModuleSort({
+        "foos": ["resume_edu", "resume_work", "resume_project", "resume_in_school", "resume_out_school", "resume_self", "resume_cart", "resume_honor"],
+        "bars": ["resume_msg", "resume_graph", "resume_icon"]
+    });
+</script>
+</body>
+</html>
+

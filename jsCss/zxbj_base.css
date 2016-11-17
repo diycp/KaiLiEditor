@@ -1,0 +1,2071 @@
+﻿* {
+    padding: 0px;
+    margin: 0px;
+    outline: none;
+}
+
+html {
+    border-collapse: collapse;
+    background: #f0f1f3;
+}
+
+html, body {
+    background: #f4f4f4;
+}
+
+html, body, h1, h2, h3, h4, h5, h6, div, dl, dt, dd, ul, ol, li, p, blockquote, pre, hr, figure, table, caption, th, td, form, fieldset, legend, input, button, textarea, menu {
+    margin: 0;
+    padding: 0;
+}
+
+ul, ol, li {
+    list-style: none;
+    color: #2F2C28;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+header, footer, section, article, aside, nav, hgroup, address, figure, figcaption, menu, details {
+    display: block;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+caption, th {
+    text-align: left;
+    font-weight: normal;
+}
+
+html, body, fieldset, img, iframe, abbr {
+    border: 0;
+}
+
+cite, em, var, address, dfn {
+    font-style: normal;
+}
+
+[hidefocus], summary {
+    outline: 0;
+}
+
+h1, h2, h3, h4, h5, h6, small {
+    font-size: 100%;
+}
+
+sup, sub {
+    font-size: 83%;
+}
+
+pre, code, kbd, samp {
+    font-family: inherit;
+}
+
+q:before, q:after {
+    content: none;
+}
+
+textarea {
+    overflow: auto;
+    resize: none;
+}
+
+label, summary {
+    cursor: default;
+}
+
+a, button {
+    cursor: pointer;
+}
+
+h1, h2, h3, h4, h5, h6, em, strong, b {
+    font-weight: bold;
+}
+
+a, a:hover {
+    text-decoration: none;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+body, button, input, select, textarea, a, label {
+    color: #3b3b3b;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #d55101;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+img {
+    border: none;
+}
+
+div[contenteditable] ul, div[contenteditable] ul li {
+    font-size: inherit;
+    list-style-type: initial;
+    list-style-position: inside
+}
+
+div[contenteditable] ol, div[contenteditable] ol li {
+    font-size: inherit;
+    list-style-type: decimal;
+    list-style-position: inside
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+html.open {
+    overflow: hidden;
+}
+
+/**提示文字获取焦点后消失*/
+::-webkit-input-placeholder {
+    color: #BDBDBD;
+}
+
+::-moz-placeholder {
+    color: #BDBDBD;
+}
+
+:-moz-placeholder {
+    color: #BDBDBD;
+}
+
+:-ms-input-placeholder {
+    color: #BDBDBD;
+}
+
+input:focus::-webkit-input-placeholder {
+    color: transparent;
+}
+
+input:focus::-moz-placeholder {
+    color: transparent;
+}
+
+input:focus:-moz-placeholder {
+    color: transparent;
+}
+
+input:focus:-ms-input-placeholder {
+    color: transparent;
+}
+
+/** 分页符 */
+.resumePageBreak {
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: transparent;
+    left: 0;
+    border-bottom: 1px dashed #6983e4;
+}
+
+.resumePageBreak span {
+    display: block;
+    width: 14rem;
+    color: #fff;
+    position: absolute;
+    height: 3rem;
+    line-height: 2.9rem;
+    top: -1.5rem;
+    text-align: center;
+    left: 50%;
+    margin-left: -7rem;
+    background: linear-gradient(to bottom, #fff, #fff, #f1f1f1);
+    background: -webkit-linear-gradient(to bottom, #fff, #fff, #f1f1f1);
+    border-radius: 50px;
+    border: 1px dashed #6983e4;
+    color: #6983E4;
+}
+
+.resumePageBreak_v4 {
+    position: absolute;
+    width: 100%;
+    height: 44px;
+    background: #00c091;
+    left: 0;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.resumePageBreak_v4 span {
+    display: block;
+    width: 104%;
+    height: 43px;
+    background: url(../images/zx_index_sp.png) no-repeat 417px -2860px;
+    margin: 0 auto;
+    text-indent: -999em;
+    box-shadow: inset 0px 2px 10px 3px rgba(0, 0, 0, .2);
+    margin-left: -12px;
+}
+
+/**字体*/
+@font-face {
+    font-family: wbdfont;
+    src: url(../fonts/iconfont.eot);
+    src: url(../fonts/iconfont.eot?#iefix) format('embedded-opentype'), url(../fonts/iconfont.woff) format('woff'), url(../fonts/iconfont.ttf) format('truetype'), url(../fonts/iconfont.svg#wbdfont) format('svg')
+}
+
+.wbdfont {
+    font-family: wbdfont !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0px;
+    -moz-osx-font-smoothing: grayscale
+}
+
+/*清除浮动*/
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+    font-size: 0;
+}
+
+.clearfix {
+    display: inline-block;
+}
+
+.clearfix {
+    height: 1%;
+}
+
+.clearfix {
+    display: block;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+.resume_hidden_module {
+    display: none;
+}
+
+.baseditBar .mobanBar .editBox .coselectBtn .more, .xzmb-tool .xzmb-btn, .headInner .otherNav ul li a, .edBtn, .edtitleBox span, .nrmkList li span, .nrmkBtn .more, .editBox .addBtn span, .picstyList ul li, .picborList ul li, .mubaninfoBar ul li.left i, .editBtn li, .baseditBar .borderBar .editBox .borderList .borsize, .baseditBar .borderBar .editBox .borderList .borstyle, .picborList .borbtn {
+    background: url(../images/zxbjSp.png);
+}
+
+.resume_line {
+    cursor: pointer;
+    height: 0px !important;
+}
+
+.pop-layer-box {
+    position: fixed;
+    z-index: 9999;
+    color: #d3d3d3;
+    font-size: 18px;
+    padding: 20px 41px;
+    background-color: #646464;
+    border-radius: 3px;
+    width: 400px;
+    text-align: center;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 30%;
+    display: none;
+    opacity: 0;
+}
+
+/**拖动*/
+.resume_drag:hover, .resume_drag:focus, .resume_drag:checked, .resume_drag:active {
+    box-shadow: 0 0 8px rgba(150, 150, 150, .8);
+}
+
+.resume_drag {
+    position: absolute;
+    z-index: 999;
+    top: 50px;
+    left: 40%
+}
+
+.resume_drag .textarea {
+    width: 500px;
+    height: 200px;
+}
+
+.resume_drag span {
+    background: url(../../editresume/images/zxbjSp.png);
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    display: none;
+    background-color: rgba(0, 192, 145, .5);
+}
+
+.resume_drag span.resume_drag_move {
+    background-position: 5px -624px;
+    cursor: move;
+    top: 0;
+    left: -24px;
+    display: none !important;
+}
+
+.resume_drag span.resume_drag_delete {
+    background-position: -96px -625px;
+    cursor: pointer;
+    top: 0px;
+    left: -24px;
+}
+
+/** v4新添加的，防止覆盖了以前版本的样式 */
+.resume_drag span.resume_drag_delete_v4 {
+    background-position: -96px -625px;
+    cursor: pointer;
+    top: 0px;
+    left: -24px;
+}
+
+.resume_drag span:hover {
+    background-color: rgb(0, 192, 145);
+}
+
+.resume_drag:hover span {
+    display: block;
+}
+
+/** 图片 */
+.resume_image img {
+    display: block;
+    cursor: move;
+}
+
+.resume_image_radius img {
+    border-radius: 50%;
+}
+
+.resume_textarea div.textarea {
+    display: block;
+    background: none;
+    border: none;
+}
+
+.resume_textarea .drag-text {
+    display: none;
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    cursor: move;
+    top: 0px;
+    left: -23px;
+    text-indent: -999em;
+    background: #00C091 url(../../editresume/images/zxbjSp.png);
+    background-position: 5px -624px;
+}
+
+.resume_textarea:hover .drag-text {
+    display: block;
+}
+
+.ui-resizable-helper {
+    border: 2px dashed #1dc092;
+}
+
+.wbd-baseStyle .resume_drag img {
+    width: inherit;
+    height: inherit;
+}
+
+.wbd-baseStyle .resume_image.ui-resizable {
+    width: 500px;
+}
+
+.wbd-baseStyle .resume_image.ui-resizable img {
+    border: 2px dashed transparent;
+}
+
+.wbd-baseStyle .resume_image.ui-resizable:hover img {
+    border: 2px dashed #1dc092;
+}
+
+/*缩放工具*/
+.ui-resizable {
+    position: absolute
+}
+
+.ui-resizable-handle {
+    position: absolute;
+    font-size: .1px;
+    display: block
+}
+
+.ui-resizable-autohide .ui-resizable-handle, .ui-resizable-disabled .ui-resizable-handle {
+    display: none
+}
+
+.ui-resizable-n {
+    cursor: n-resize;
+    height: 7px;
+    width: 100%;
+    top: -5px;
+    left: 0
+}
+
+.ui-resizable-s {
+    cursor: s-resize;
+    height: 8px;
+    width: 100%;
+    bottom: -4px;
+    left: 0px;
+}
+
+.ui-resizable-e {
+    cursor: e-resize;
+    width: 8px;
+    right: -4px;
+    top: 0px;
+    height: 100%;
+}
+
+.ui-resizable-w {
+    cursor: w-resize;
+    width: 7px;
+    left: -5px;
+    top: 0;
+    height: 100%
+}
+
+.ui-resizable-se {
+    cursor: se-resize;
+    width: 15pt;
+    height: 15pt;
+    right: 0px;
+    bottom: 0px;
+}
+
+.ui-resizable-sw {
+    cursor: sw-resize;
+    width: 9px;
+    height: 9px;
+    left: -5px;
+    bottom: -5px
+}
+
+.ui-resizable-nw {
+    cursor: nw-resize;
+    width: 9px;
+    height: 9px;
+    left: -5px;
+    top: -5px
+}
+
+.ui-resizable-ne {
+    cursor: ne-resize;
+    width: 9px;
+    height: 9px;
+    right: -5px;
+    top: -5px
+}
+
+/**z-index*/
+header {
+    z-index: 20001;
+}
+
+.baseditBar {
+    z-index: 20000;
+}
+
+.modal {
+    z-index: 50000;
+}
+
+.modal-backdrop.in {
+    z-index: 49999;
+}
+
+.table {
+    position: absolute;
+    padding: 10px;
+    width: 222px;
+    height: 222px;
+    border: 1px solid #ccc;
+    background: #fff;
+    overflow: hidden;
+    max-width: 222px;
+}
+
+.table span {
+    width: 10px;
+    height: 10px;
+    display: block;
+    float: left;
+    background: #f0f0f0;
+    margin: 5px;
+    cursor: pointer;
+}
+
+table {
+    width: 100%;
+}
+
+table td {
+    border: 1px solid #ddd;
+    line-height: 33px;
+    height: 33px;
+    padding: 2px;
+    width: auto;
+}
+
+/************************************** 编辑样式 ************************************/
+
+/*浏览器提示*/
+.browserPrompt {
+    width: 100%;
+    height: 60px;
+    background: rgba(41, 41, 41, 0.8);
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    z-index: 70000;
+    text-align: center;
+    display: none;
+}
+
+.browserPrompt .close {
+    opacity: 0.8;
+    width: 23px;
+    height: 23px;
+    display: block;
+    z-index: 70001;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+    background: url(../images/close.png) no-repeat;
+}
+
+.browserPrompt .close:hover {
+    opacity: 1;
+}
+
+.browserPrompt .text {
+    font-size: 14px;
+    color: #fff;
+    position: absolute;
+    top: 16px;
+    height: 28px;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+
+.browserPrompt .text span {
+    color: #ff834c;
+}
+
+.browserPrompt .text .download {
+    width: 74px;
+    height: 28px;
+    color: #fff;
+    background: #e84b44;
+    display: inline-block;
+    line-height: 28px;
+    text-align: center;
+    border-radius: 3px;
+    margin-left: 10px;
+    transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+}
+
+.browserPrompt .text .download:hover {
+    color: #fff;
+    background: #eb6862;
+}
+
+#pages {
+    float: left;
+    width: 100%;
+    padding: 15px 0;
+    text-align: center;
+}
+
+#pages a {
+    background: #f1f1f1;
+    color: #a9a9a9;
+    font-family: Arial;
+    height: 36px;
+    margin-right: 5px;
+    text-align: center;
+    transition: background-color 0.2s ease-out 0s;
+    padding: 10px 14px;
+    position: relative;
+}
+
+#pages a#pageactive {
+    background: #ff6000;
+    color: #fff;
+    cursor: default;
+}
+
+#pages a.pageactive {
+    background: #ff6000;
+    color: #fff;
+    cursor: default;
+}
+
+#pages a:hover {
+    background: #969696;
+    color: #fff;
+}
+
+header {
+    width: 100%;
+    height: 60px;
+    background: #464e78;
+    position: fixed;
+    top: 0px;
+}
+
+.headInner {
+    width: 98%;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.headInner .logo {
+    width: 260px;
+    height: 30px;
+    padding: 15px 0;
+    float: left;
+}
+
+.headInner .nav {
+    float: left;
+    margin: 15px 0 0 0;
+}
+
+.headInner .nav.open .btn {
+    background: #fff;
+    background: url(../../editresume/images/zxbjSp.png) no-repeat;
+    background-position: -76px -1159px;
+}
+
+.headInner .nav .btn {
+    width: 32px;
+    height: 29px;
+    background: url(../../editresume/images/zxbjSp.png) no-repeat;
+    background-position: -1px -1159px;
+    display: block;
+}
+
+.headInner .nav .dropdown-menu {
+    width: 292px;
+    height: 223px;
+    border: none;
+    top: 43px;
+    padding: 15px;
+}
+
+.headInner .nav .dropdown-menu li {
+    width: 50%;
+    float: left;
+}
+
+.headInner .nav .dropdown-menu li h2 {
+    border-bottom: 1px solid #dcdcdc;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.headInner .nav .dropdown-menu li h2 a {
+    font-size: 16px;
+    color: #000;
+}
+
+.headInner .nav .dropdown-menu li p a {
+    font-size: 12px;
+    color: #ababab;
+    line-height: 24px;
+}
+
+.headInner .nav .dropdown-menu li.resume {
+    padding-left: 0px;
+}
+
+.headInner .nav .dropdown-menu li.ppt h2, .headInner .nav .dropdown-menu li.ppt p {
+    padding-left: 20px;
+}
+
+.headInner .nav .dropdown-menu a:hover {
+    color: #FD8655;
+}
+
+.headInner .nav .caret {
+    position: absolute;
+    top: -9px;
+    left: 5px;
+    border-top: none;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-bottom: 9px solid #fff;
+    border-right: 8px solid rgba(247, 247, 247, 0);
+    border-left: 8px solid transparent;
+}
+
+.headInner .userInfo {
+    float: right;
+    margin-left: 35px;
+}
+
+.headInner .userInfo .userImg {
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    margin-top: 8px;
+}
+
+.headInner .userInfo .userImg img {
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    display: block;
+}
+
+.headInner .otherNav {
+    float: right;
+    padding-top: 15px;
+}
+
+.headInner .otherNav ul li {
+    float: left;
+    margin-right: 15px;
+}
+
+.headInner .otherNav ul li a {
+    float: left;
+    width: 95px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: #596397;
+    line-height: 30px;
+    color: #373e65;
+    font-size: 12px;
+    padding-left: 35px;
+    display: block;
+}
+
+.headInner .otherNav ul li a:hover {
+    background-color: #8A9BF4;
+}
+
+.headInner .otherNav ul li a.web {
+    background-position: 10px 5px;
+}
+
+.headInner .otherNav ul li a.mobile {
+    background-position: 10px -36px;
+}
+
+/*删除提示框*/
+.myModaldel {
+    background: rgba(0, 0, 0, .3);
+}
+
+.myModaldel .modal-dialog {
+    width: 400px;
+    height: 245px;
+    border-radius: 5px;
+    background: #fff;
+    position: ABSOLUTE;
+    top: 50%;
+    margin-top: -122px;
+    left: 50%;
+    margin-left: -200px;
+    border: 4px solid rgba(105, 131, 228, .4);
+    background-clip: padding-box;
+    -moz-background-clip: padding-box;
+    -webkit-background-clip: padding-box;
+}
+
+.myModaldel .modal-dialog .close {
+    right: 5px;
+    position: absolute;
+    color: #B7B7B7;
+    opacity: 1;
+    font-size: 24px;
+}
+
+.myModaldel .modal-dialog .icon {
+    width: 53px;
+    height: 56px;
+    margin: 20px auto 40px auto;
+    background: url(../../editresume/images/zxbjSp.png) no-repeat 0px -1241px;
+    display: block;
+}
+
+.myModaldel .modal-dialog p {
+    font-size: 18px;
+    text-align: center;
+    color: #444;
+    margin-bottom: 35px;
+}
+
+.myModaldel .modal-dialog .delbtn {
+    display: block;
+    text-align: center;
+}
+
+.myModaldel .modal-dialog .delbtn a {
+    border: none;
+    line-height: 30px;
+    padding: 0 20px;
+    background: #FD8655;
+    border-radius: 5px;
+    color: #fff;
+    display: inline-block;
+}
+
+.myModaldel .modal-dialog .delbtn a:hover, .myModaldel .modal-dialog .delbtn button:active, .myModaldel .modal-dialog .delbtn button:checked {
+    opacity: .9;
+}
+
+.myModaldel .modal-dialog .delbtn a.reset {
+    background: #e2e2e2;
+    margin-left: 24px;
+}
+
+/*弹窗居中*/
+#myModalIcon .modal-dialog {
+    width: 666px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -269px;
+    margin-left: -333px;
+}
+
+#myModalText .modal-dialog {
+    top: 50%;
+    position: absolute;
+    left: 50%;
+    margin-left: -335px;
+    margin-top: -200px;
+}
+
+#myModalHead .modal-dialog {
+    top: 50%;
+    position: absolute;
+    left: 50%;
+    margin-left: -335px;
+    margin-top: -225px;
+}
+
+#myModalnrmk .modal-dialog {
+    top: 50%;
+    position: absolute;
+    left: 50%;
+    margin-left: -355px;
+    margin-top: -272px;
+}
+
+#promptModal .modal-dialog {
+    top: 50%;
+    position: absolute;
+    left: 50%;
+    margin-left: -330px;
+    margin-top: -280px;
+}
+
+#suggestsModal .modal-dialog {
+    top: 50%;
+    position: absolute;
+    left: 50%;
+    margin-left: -300px;
+    margin-top: -189px;
+}
+
+#myModaldrmk .modal-dialog {
+    top: 50%;
+    position: absolute;
+    left: 50%;
+    margin-left: -237px;
+    margin-top: -143px;
+}
+
+#myModalPic .modal-dialog {
+    top: 50%;
+    position: absolute;
+    left: 50%;
+    margin-left: -335px;
+    margin-top: -215px;
+}
+
+/*最新在线编辑*/
+.baseStyle {
+    width: 1100px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin: 10px auto 0 auto; /* height:auto; */
+    padding-top: 50px;
+    position: relative;
+}
+
+.baseStyle input {
+    font-size: inherit;
+    background: none;
+    border: none;
+    width: inherit;
+    height: inherit;
+    font-weight: inherit;
+    font-family: inherit;
+    color: inherit;
+    text-align: inherit;
+}
+
+.baseStyle .baseBorder {
+    border: 1px solid transparent;
+    transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -ms--transition: all 0.3s;
+}
+
+.baseStyle .baseBorder:hover {
+    border: 1px dashed rgba(141, 165, 252, 0.6);
+}
+
+.baseStyle .positonDiv {
+    margin: 20px 0;
+    position: relative;
+    border: 1px dashed transparent;
+    transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -ms--transition: all 0.3s;
+    padding: 2px 0 20px 0;
+}
+
+.baseStyle .positonDiv:hover {
+    border: 1px dashed rgba(141, 165, 252, 0.6);
+}
+
+.baseStyle .baseItem .editBtn {
+    left: -36px;
+}
+
+.baseStyle .msgDiv .baseDel:hover .delete, .baseStyle .skillDiv .baseDel:hover .delete, .baseStyle .hobbyDiv .baseDel:hover .delete {
+    display: none;
+}
+
+.baseStyle .baseBorder:focus, .baseStyle .baseBorder div:focus, .baseStyle .baseBorder input:focus {
+    border: 1px solid #beccff;
+    -moz-box-shadow: 0 0 4px #beccff;
+    -webkit-box-shadow: inset 0 0 4px #ffba00;
+    box-shadow: 0 0 4px #beccff;
+    -webkit-user-select: none;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    box-shadow: 0px 0px 5px rgba();
+}
+
+.baseStyle .skillDiv .skillUl li span {
+    cursor: pointer;
+}
+
+.tooltip-inner {
+    padding: 7px 10px;
+    max-width: 220px;
+}
+
+/*拖拽*/
+.sortable-ghost {
+    border: 2px dashed rgba(141, 165, 252, .5);
+    -moz-box-shadow: 0 0 4px rgba(141, 165, 252, .5);
+    -webkit-box-shadow: 0 0 4px rgba(141, 165, 252, .5);
+    box-shadow: 0 0 4px rgba(141, 165, 252, .5);
+    -webkit-user-select: none;
+    transition: all .5s;
+    opacity: 1;
+    -webkit-transition: all .5s;
+}
+
+.sortable-ghost dl, .sortable-ghost .baseMsg, .sortable-ghost .skillUl {
+    opacity: 0;
+    transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -ms--transition: all 0.3s;
+}
+
+.sortable-ghost:active {
+    display: none;
+}
+
+.sortable-ghost[draggable=true] {
+    transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -ms--transition: all 0.3s;
+    border: 1px dashed rgba(255, 162, 42, .8);;
+    transform: translateY(-10px);
+}
+
+/*删除按钮*/
+.baseDel {
+    position: relative;
+    border: 1px solid transparent
+}
+
+.report_img {
+    text-align: center;
+    width: 20%;
+    top: 10px;
+    float: left;
+}
+
+.number {
+    width: 50%;
+    float: left;
+}
+
+.baseDel .delete {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background: url(../images/zxbjSp.png) no-repeat -262px -627px;
+    cursor: pointer;
+    display: none;
+    width: 20px;
+    height: 20px;
+}
+
+.baseDel .delete:hover {
+    background: url(../images/zxbjSp.png) no-repeat -299px -627px;
+}
+
+.baseDel_ {
+    position: relative;
+    border: 1px solid transparent
+}
+
+.baseDel_ .delete_ {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background: url(../images/zxbjSp.png) no-repeat -262px -627px;
+    cursor: pointer;
+    display: none;
+    width: 20px;
+    height: 20px;
+    z-index: 10;
+}
+
+.baseDel_:hover .delete_ {
+    display: block;
+}
+
+.baseDel_ .delete_:hover {
+    background: url(../images/zxbjSp.png) no-repeat -299px -627px;
+}
+
+.custDel {
+    position: relative;
+    border: 1px solid transparent
+}
+
+.custDel .cust_delete {
+    position: absolute;
+    top: 25px;
+    left: 20px;
+    background: url(../images/zxbjSp.png) no-repeat -262px -627px;
+    cursor: pointer;
+    display: none;
+    width: 20px;
+    height: 20px;
+    z-index: 20;
+}
+
+.custDel:hover .cust_delete {
+    display: block;
+}
+
+/*模块隐藏*/
+.baseDel_ .cust_delete:hover {
+    background: url(../images/zxbjSp.png) no-repeat -299px -625px;
+}
+
+/*通用信息*/
+.baseStyle .headDiv {
+    box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+}
+
+.baseStyle .baseItem {
+    padding-bottom: 0;
+    margin: 0;
+}
+
+.baseStyle .baseItem dl {
+    width: 100%;
+    overflow: hidden;
+}
+
+.baseStyle .baseItem dl dt {
+    height: 65px;
+    line-height: 65px;
+    padding: 0 35px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.baseStyle .baseItem dl dd {
+    color: #254665;
+}
+
+.baseStyle .baseItem dl dt span {
+    line-height: 62px;
+    font-weight: 600;
+    color: #000;
+    float: left;
+    padding-bottom: 5px;
+    display: inline-block;
+    position: relative;
+}
+
+.baseStyle .baseItem dl dt span div.Border {
+    position: absolute;
+    top: 50px;
+    left: 0px;
+    display: block;
+    background: transparent;
+    width: 668px;
+    cursor: pointer;
+    border-top-style: solid;
+    border-top-color: #000000;
+    border-top-width: 2px;
+}
+
+.baseStyle .baseItem dl dt a {
+    display: inline-table;
+    margin-right: 6px;
+    font-size: 45px;
+    vertical-align: middle;
+    text-align: center;
+    color: #254665;
+    height: 45px;
+    float: left;
+}
+
+.baseStyle .baseItem .baseContent {
+    margin-bottom: 10px;
+    margin: 0 40px;
+    padding: 5px 0 5px 5px;
+}
+
+.baseStyle .baseItem .baseContent .conTitle {
+    overflow: hidden;
+}
+
+.baseStyle .baseItem .baseContent .conTitle span {
+    height: initial;
+    line-height: initial;
+    font-weight: normal;
+    float: left;
+}
+
+.baseStyle .baseItem .baseContent .conTitle span.conTitle_time {
+    width: 180px;
+}
+
+.baseStyle .baseItem .baseContent .conTitle span.conTitle_company {
+    width: 290px;
+}
+
+.baseStyle .baseItem .baseContent .conTitle span.conTitle_post {
+    width: 240px;
+}
+
+.baseStyle .baseItem .baseContent .conDisc ol, .baseStyle .baseItem .baseContent .conDisc ul {
+    padding-left: 1.52em;
+}
+
+.baseStyle .fbottom_bg {
+    z-index: 1;
+    position: absolute;
+    bottom: 0px;
+    width: 1100px;
+    left: 0px;
+}
+
+/*默认字体大小*/
+.baseStyle .nameDiv h1 {
+    font-size: 48px;
+}
+
+.baseStyle .nameDiv h2 {
+    font-size: 18px;
+}
+
+.baseStyle .msgDiv .baseMsg {
+    font-size: 16px;
+}
+
+.baseStyle .baseItem dl dt span {
+    font-size: 26px;
+}
+
+.baseStyle .baseItem dl dd {
+    font-size: 16px;
+}
+
+.baseStyle .msgDiv.positonDiv .baseMsg {
+    line-height: 31px;
+    height: 31px
+}
+
+.baseStyle .msgDiv.positonDiv .baseMsg input {
+    line-height: 31px;
+    float: left;
+    display: block;
+    height: 31px;
+}
+
+.baseStyle .msgDiv.positonDiv .baseMsg a {
+    line-height: 31px;
+    padding-top: 0px;
+    margin-top: 0px;
+    height: 31px;
+    display: block;
+    float: left;
+}
+
+/*右侧按钮*/
+.rsideBtn {
+    width: 50px;
+    float: right;
+    position: relative;
+}
+
+.rsideBtn ul {
+    position: fixed;
+    margin-top: -46px;
+}
+
+.rsideBtn ul li {
+    width: 124px;
+    height: 36px;
+    border-radius: 36px;
+    background-image: url(../images/zxbjslide_btn.png);
+    margin-bottom: 11px;
+    background-repeat: no-repeat;
+    border: 1px solid #949494;
+}
+
+.rsideBtn ul li:hover {
+    opacity: .9;
+}
+
+.rsideBtn ul li a {
+    height: 36px;
+    line-height: 36px;
+    display: block;
+    padding-left: 45px;
+    color: #fff;
+    font-size: 14px;
+}
+
+.rsideBtn ul li.download {
+    background-color: #289ee8;
+    box-shadow: 0px 4px 0px 0px #2879ab;
+    background-position: 15px 11px;
+    border: 1px solid transparent;
+}
+
+.rsideBtn ul li.checkmb {
+    background-color: transparent;
+    background-position: 15px -32px;
+}
+
+.rsideBtn ul li.save {
+    background-color: transparent;
+    background-position: 15px -74px;
+}
+
+.rsideBtn ul li.save a, .rsideBtn ul li.checkmb a {
+    color: #949494;
+}
+
+/*多份简历简历名称*/
+.mubannameBar {
+    width: 1100px;
+    height: 73px;
+    border: 1px solid #ebebeb;
+    background: #fff url(../images/mubanuserBar_bg.png) repeat-x 0px 0px;
+    margin: 0 auto;
+    margin-top: 185px;
+    border-bottom: none;
+    padding-top: 23px;
+}
+
+.mubannameBar .nameCon {
+    width: 390px;
+    margin: 0 auto;
+    font-size: 18px;
+}
+
+.mubannameBar .nameCon .n_name {
+    float: left;
+    color: #cdcdcd;
+}
+
+.mubannameBar .nameCon .e_title {
+    width: 272px;
+    border: none;
+    border-bottom: 1px solid #cdcdcd;
+    padding: 0px;
+    font-size: inherit;
+    color: #cdcdcd;
+    float: left;
+    background: transparent;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -ms--transition: all 0.3s;
+}
+
+.mubannameBar .nameCon .e_title:focus {
+    color: #4D4D4D;
+}
+
+.mubannameBar .nameCon .dropdown .more {
+    width: 22px;
+    height: 22px;
+    background: url(../images/zxbjSp.png) no-repeat 0px -1342px;
+    float: right;
+    cursor: pointer;
+    margin-top: 4px;
+}
+
+.mubannameBar .nameCon .dropdown .more:focus, .mubannameBar .nameCon .dropdown .more:active, .mubannameBar .nameCon .dropdown .more:hover, .mubannameBar .nameCon .dropdown .more:checked {
+    background: url(../images/zxbjSp.png) no-repeat -54px -1342px;
+}
+
+.mubannameBar .nameCon .dropdown-menu {
+    width: 304px;
+    height: 150px;
+    border: 1px solid #d2d2d2;
+    border-radius: 4px;
+    top: 38px;
+    left: 87px;
+}
+
+.mubannameBar .nameCon .dropdown-menu ul {
+    padding: 8px;
+    overflow-y: auto;
+    height: 107px;
+}
+
+.mubannameBar .nameCon .dropdown-menu ul li a {
+    width: 269px;
+    height: 32px;
+    line-height: 32px;
+    display: block;
+    color: #b5b5b5;
+    padding-left: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.mubannameBar .nameCon .dropdown-menu ul li a.current {
+    background: #f2f2f2;
+    color: #676161;
+}
+
+.mubannameBar .nameCon .dropdown-menu ul li a:hover {
+    background: #F9DBCE;
+    color: #fff;
+}
+
+.mubannameBar .nameCon .dropdown-menu .g_btn {
+    width: 100%;
+    height: 36px;
+    line-height: 36px;
+    display: block;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    background: #FD8655 url(../images/zxbjSp.png) no-repeat 105px -1300px;
+    border-radius: 4px;
+}
+
+.mubannameBar .nameCon .dropdown-menu .g_btn:hover {
+    background-color: #F36D36;
+}
+
+.mubannameBar .nameCon .dropdown-menu .span_tri {
+    position: absolute;
+    width: 11px;
+    height: 7px;
+    background: url(../images/span_tri.png) no-repeat;
+    display: block;
+    right: 15px;
+    top: -7px;
+}
+
+.myModalscjl.modal-dialog {
+    width: 760px;
+    border: 5px solid rgba(0, 0, 0, .3);
+    border-radius: 8px;
+}
+
+.jl-scjl-hd {
+    width: 100%;
+    height: 193px;
+    background: #f4f4f4;
+    padding: 29px 74px;
+    border-bottom: 3px solid #EBEBEB;
+}
+
+.jl-scjl-hd .img {
+    width: 100px;
+    height: 138px;
+    border: 1px solid #dcdbdb;
+    background: #fff;
+    padding: 4px;
+    float: left;
+}
+
+.jl-scjl-hd .text {
+    width: 450px;
+    float: right;
+}
+
+.jl-scjl-hd .title input {
+    font-size: 19px;
+    font-weight: bold;
+    color: #3b3b3b;
+    border: none;
+    background: transparent;
+    width: 235px;
+}
+
+.jl-scjl-hd .title button {
+    background: transparent;
+    border: none;
+    background: url(../../editresume/images/import_sp.png) no-repeat 0px -1041px;
+    padding-left: 20px;
+    margin-left: 20px;
+}
+
+.jl-scjl-hd .title {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 21px;
+}
+
+.jl-scjl-hd .text p.time {
+    font-size: 14px;
+    color: #b6b6b6;
+    border-top: 1px solid #fff;
+    padding-top: 12px;
+    margin-bottom: 25px;
+}
+
+.jl-scjl-hd .text p.mb-name {
+    font-size: 14px;
+    color: #707070;
+}
+
+.jl-scjl-hd .text p.mb-name span {
+    color: #ff4500;
+}
+
+.jl-scjl-bd .name {
+    font-size: 14px;
+    color: #939191;
+    margin-bottom: 12px;
+}
+
+.jl-scjl-bd .name span {
+    color: #000000;
+}
+
+.jl-scjl-bd {
+    border-bottom: 1px solid #ebebeb;
+    padding: 10px 74px;
+}
+
+.jl-scjl-bd .gxym_div {
+    line-height: 40px;
+    font-size: 14px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #E9E9E9;
+}
+
+.jl-scjl-bd .gxym_div span {
+    background: #8c8c8c;
+    display: inline-block;
+    padding: 0 10px;
+    color: #fff;
+}
+
+.jl-scjl-bd .gxym_div span i {
+    font-style: normal;
+}
+
+.jl-scjl-bd .gxym_div span input {
+    width: 264px;
+    border: none;
+    background: transparent;
+    padding: 0 5px;
+    font-size: 14px;
+    color: #fff;
+}
+
+.jl-scjl-bd .gxym_div span input:focus {
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.jl-scjl-bd .gxym_div button {
+    width: 70px;
+    height: 40px;
+    background: #fb845b;
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.jl-scjl-bd .gxym_div button:hover {
+    background: #5B9FFB;
+}
+
+.jl-scjl-bd .gxym_div button:active, ..jl-scjl-bd .gxym_div button:checked {
+    background: #2F75D4;
+    box-shadow: inset 0px 1px 2px 1px rgba(0, 0, 0, .1);
+}
+
+.jl-scjl-bd .gxym_div .error {
+    padding-left: 73px;
+    color: #ff4646;
+    font-size: 12px;
+}
+
+.jl-scjl-bd .yssz_div {
+    font-size: 14px;
+    color: #000000;
+    height: 135px;
+    padding-top: 20px;
+}
+
+.jl-scjl-bd .yssz_div ul {
+    margin-left: 25px;
+}
+
+.jl-scjl-bd .yssz_div ul li {
+    line-height: 15px;
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+
+.jl-scjl-bd .yssz_div input {
+    line-height: 15px;
+    margin-top: 2px;
+}
+
+.jl-scjl-bd .yssz_div input, ..jl-scjl-bd .yssz_div label, ..jl-scjl-bd .yssz_div li span {
+    float: left;
+    display: block;
+}
+
+.jl-scjl-bd .yssz_div label {
+    font-size: 14px;
+    line-height: 15px;
+    width: 110px;
+    margin-left: 8px;
+    color: #000;
+}
+
+.jl-scjl-bd .yssz_div li span {
+    color: #aaa;
+}
+
+.myModalscjl .jl-btn {
+    width: 100%;
+    text-align: center;
+}
+
+.myModalscjl .jl-btn a, .myModalscjl .jl-btn button {
+    width: 195px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 50px;
+    background: #ff4500;
+    color: #fff;
+    text-align: center;
+    margin: 0 auto;
+    border: none;
+    font-size: 24px;
+    margin: 15px 0;
+    display: inline-block;
+}
+
+.myModalscjl .jl-btn a:hover, .myModalscjl .jl-btn button:hover {
+    opacity: .8;
+}
+
+.mubaninfoBar ul {
+    overflow: hidden;
+}
+
+#-----不可编辑样式
+.resetEditStyle .wbd-fontBar {
+    display: none;
+}
+
+.resetEditStyle {
+    position: relative;
+}
+
+.resetEditStyle .no_edit_background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: 999
+}
+
+/*V3编辑局域*/
+.wbd-baseStyle {
+    position: relative;
+}
+
+.wbd-baseStyle .baseSort {
+    border: 1px transparent;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.wbd-baseStyle .baseSort:hover {
+    border: 1px solid #d4d4d4;
+    background: #d4d4d4;
+}
+
+.wbd-baseStyle .selectedItem {
+    background: #fff;
+    position: relative;
+    z-index: 9999 !important;
+    cursor: initial !important;
+    border: 1px solid #60d5ba;
+}
+
+.wbd-baseStyle .selectedItem:hover {
+    background: #fff;
+    border: 1px solid #60d5ba;
+}
+
+.wbd-baseStyle {
+    width: 1100px;
+    background: #fff;
+}
+
+.wbd-baseStyle .baseItem {
+    width: 100%;
+    position: relative;
+    margin-bottom: 10pt;
+    margin-top: 10pt;
+    cursor: move;
+    z-index: 1;
+    clear: both;
+}
+
+.wbd-baseStyle .baseItem dl dt {
+    margin-bottom: 0px !important;
+}
+
+.wbd-baseStyle .baseItem dl dd {
+    cursor: initial;
+    padding-bottom: 0px !important;
+}
+
+.wbd-baseStyle .baseItem dl dt span {
+    cursor: initial;
+}
+
+.wbd-baseStyle .baseContent {
+    font-size: 16px;
+    margin-bottom: 0px;
+    padding: 5px 8px;
+}
+
+.wbd-baseStyle .baseContent:hover {
+    border: 1px dashed #60d5ba !important;
+}
+
+.wbd-baseStyle .baseContent .conTitle {
+    clear: both;
+}
+
+.wbd-baseStyle .baseContent .conTitle div {
+    width: 50%;
+    float: left;
+    border: 1px dashed transparent;
+}
+
+.wbd-baseStyle .baseContent .conText {
+    border: 1px dashed transparent;
+    margin-right: 2px
+}
+
+.wbd-baseStyle .baseContent .conTitle span > div {
+    height: 28px !important;
+    overflow: hidden
+}
+
+.wbd-baseStyle .headDiv .inner {
+    width: 150px;
+    height: 200px;
+    text-align: center;
+    margin: 0 auto;
+    border: 6px solid rgba(255, 255, 255, 0.9);
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 30px;
+    box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+}
+
+.wbd-baseStyle .headDiv .inner .headNotice {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .3);
+    text-align: center;
+    padding-top: 164px;
+    color: rgba(255, 255, 255, .5);
+    opacity: 0;
+}
+
+.wbd-baseStyle .headDiv .inner:hover .headNotice {
+    opacity: 1;
+}
+
+.wbd-baseStyle .headDiv .inner .img-preview {
+    width: 150px;
+    height: 200px;
+}
+
+.wbd-baseStyle .headDiv .delete {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: #fc411b url(../images/zx_index_sp.png) no-repeat 4px -809px;
+}
+
+.wbd-baseStyle .headDiv .choose {
+    height: 26px;
+    line-height: 26px;
+    padding: 0 12px;
+    color: #fff;
+    border-radius: 30px;
+    background: #00c091;
+    display: inline-block;
+    border: 1px solid transparent;
+}
+
+.wbd-baseStyle .headDiv .choose:hover {
+    background: #13c79b;
+}
+
+.wbd-baseStyle .headDiv .choose:active {
+    background: #04a27c;
+    color: #04674f;
+}
+
+.wbd-baseStyle .headDiv .delete:hover {
+    background-color: #ff5b3a;
+}
+
+.wbd-baseStyle .headDiv .delete:active {
+    background-color: #f23914;
+}
+
+.wbd-baseStyle .msgDiv .baseMsg { /*height: 40px;line-height: 40px;*/
+    border: 1px dashed transparent;
+    margin-bottom: 10px;
+    float: left;
+}
+
+.wbd-baseStyle .baseDel {
+    position: relative;
+}
+
+.wbd-baseStyle .baseDel .delete {
+    position: absolute;
+    color: #60d5ba;
+    top: 50%;
+    margin-top: -8px;
+    right: -8px;
+    cursor: pointer;
+    display: none;
+    background: #fff;
+    width: 16px;
+    height: 16px;
+    line-height: 15px;
+    border-radius: 50%;
+}
+
+.wbd-baseStyle .baseDel:hover .delete {
+    display: block;
+}
+
+.wbd-baseStyle .baseContent.baseDel:hover .delete {
+    display: block !important;
+}
+
+.wbd-baseStyle .baseContent.baseDel:hover .conText.baseDel .delete {
+    display: none !important;
+}
+
+.wbd-baseStyle .baseContent.baseDel .conText.baseDel:hover .delete {
+    display: block !important;
+}
+
+.wbd-baseStyle .baseDel .delete:hover {
+    color: #ea5454;
+}
+
+.wbd-baseStyle .hobbyDiv .baseDel .delete {
+    top: -9px;
+    margin: 0px;
+}
+
+.wbd-baseStyle .skillDiv .baseSkill {
+    border: 1px dashed transparent;
+    color: #fff;
+    margin-bottom: 10px;
+    padding: 3px 0px;
+}
+
+.wbd-baseStyle .skillDiv .baseSkill:hover {
+    border-color: #fff !important;
+}
+
+.wbd-baseStyle .skillDiv .baseSkill .title {
+    width: 100%;
+    line-height: 26px;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.wbd-baseStyle .skillDiv .baseSkill .line {
+    width: 100%;
+    display: block;
+    position: relative;
+    height: 8px;
+}
+
+.wbd-baseStyle .skillDiv .baseSkill .line i {
+    width: 60%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-color: #92a3b2;
+    border-top-style: solid;
+    border-top-width: 8px;
+    cursor: e-resize
+}
+
+.wbd-baseStyle .skillDiv .ui-icon-gripsmall-diagonal-se {
+    background: transparent;
+    width: 100%;
+    cursor: e-resize;
+}
+
+.wbd-baseStyle .skillDiv .ui-resizable-s, .wbd-baseStyle .skillDiv .ui-resizable-e {
+    display: none !important;
+}
+
+.wbd-baseStyle .hobbyDiv .baseHobby {
+    width: 80px;
+    float: left;
+    padding: 5px;
+    text-align: center;
+    border: 1px dashed transparent;
+}
+
+.wbd-baseStyle .hobbyDiv .baseHobby a {
+    font-size: 40px;
+    color: #fff;
+    width: 68px;
+    height: 55px;
+    line-height: 45px;
+    display: inline-block;
+}
+
+.wbd-baseStyle .hobbyDiv .baseHobby .title {
+    width: 68px;
+    display: inline-block;
+    font-size: 16px;
+    color: #fff;
+    border: 1px dashed transparent;
+}
+
+.wbd-baseStyle div[contenteditable]:focus {
+    border: 1px dashed #60d5ba;
+    outline: 1px solid #60d5ba;
+    -moz-box-shadow: 0 0 4px #60d5ba;
+    -webkit-box-shadow: inset 0 0 4px #60d5ba;
+    box-shadow: 0 0 4px #60d5ba;
+}
+
+.wbd-baseStyle div[contenteditable] {
+    border: 1px solid transparent;
+}
+
+.wbd-baseStyle div[contenteditable]:hover {
+    border: 1px dashed #60d5ba !important;
+}
+
+.wbd-baseStyle div[contenteditable] a {
+    color: inherit;
+    text-decoration: underline;
+}
+
+.wbd-baseStyle div[contenteditable] blockquote {
+    font-size: inherit;
+    margin-left: 10px !important
+}
+
+.wbd-baseStyle .nameDiv dl dt {
+    display: none;
+}
+
+.wbd-baseStyle .nameDiv h1 {
+    font-size: 45px;
+}
+
+.wbd-baseStyle .nameDiv h2 {
+    font-size: 16px;
+}
+
+.wbd-baseStyle .msgDiv span {
+    font-size: 16px;
+}
+
+.wbd-baseStyle .baseItem dl dt span {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.wbd-baseStyle .nameDiv .wbd-fontBar .inner {
+    width: 522px
+}
+
+.wbd-baseStyle .baseItem.eduDiv .wbd-fontBar .inner, .wbd-baseStyle .baseItem.outexperDiv .wbd-fontBar .inner, .wbd-baseStyle .baseItem.experDiv .wbd-fontBar .inner, .wbd-baseStyle .baseItem.resume_custom .wbd-fontBar .inner, .wbd-baseStyle .baseItem.selfDiv .wbd-fontBar .inner, .wbd-baseStyle .baseItem.cartDiv .wbd-fontBar .inner, .wbd-baseStyle .baseItem.honorDiv .wbd-fontBar .inner {
+    min-width: 620px;
+}
+
+.wbd-baseStyle .baseItem .baseContent .conText ol, .wbd-baseStyle .baseItem .baseContent .conText ul {
+    border: none;
+    padding: 0px;
+    -webkit-padding-start: 0px;
+    margin-left: 10px;
+}
+
+.resume_focus:after {
+    border: 1px dashed #fff;
+}
+
+.wbd-baseStyle .wbd-divBottom {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+
+.wbd-baseStyle .wbd-divBottom, .wbd-baseStyle .wbd-divTop {
+    z-index: 0 !important;
+}
+
+.wbd-divLeft:before, .wbd-divLeft:after {
+    content: "";
+    display: table;
+}
+
+.wbd-divLeft:after {
+    clear: both;
+    overflow: hidden;
+}
+
+.wbd-divLeft {
+    zoom: 1;
+}
+
+.wbd-divRight:before, .wbd-divRight:after {
+    content: "";
+    display: table;
+}
+
+.wbd-divRight:after {
+    clear: both;
+    overflow: hidden;
+}
+
+.wbd-divRight {
+    zoom: 1;
+}
+
+/*更换模板*/
+.changeModal {
+    width: 100%;
+    height: 100%;
+    background: #f4f4f4;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 10001;
+    font-size: 100%;
+    overflow-y: auto;
+    display: none;
+}
+
+.changeModal .closeBtn {
+    position: fixed;
+    width: 66px;
+    cursor: pointer;
+    height: 66px;
+    top: 0px;
+    right: 0px;
+    background: url(../images/close.png) no-repeat;
+}
+
+.changeModal .closeBtn:hover {
+    opacity: .8;
+}
