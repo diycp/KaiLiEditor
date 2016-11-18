@@ -2069,3 +2069,10 @@ header {
 .changeModal .closeBtn:hover {
     opacity: .8;
 }
+
+.langSwitch {
+    padding-left: 10px;
+    color: #009ca3;
+    text-decoration: underline;
+    font-style: italic;
+}

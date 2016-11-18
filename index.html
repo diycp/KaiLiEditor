@@ -113,7 +113,7 @@
                 <p>请选择检查报告文件<br/>(xml)</p>
                 <div class="form-div  div_upload">
                     <a href="javascript:;" class="file" id="improt_reume_file">
-                        <p></p><input type="file" name="filename" id="file"/></a>
+                        <p></p></a>
                 </div>
                 <!--<button class="fbtn" id="improt_reume_btn">提交</button>-->
             </div>
@@ -148,12 +148,17 @@
 <div class="wbdzx-header">
     <div class="inner">
         <div class="left">
-            <a class="logo" href="/"><img
-                    src="http://static.500d.me/resources/500d/editresume/images/zxbj/zx_logo.png"/></a>
+            <a class="logo"><img src="images/logo2.png"/></a>
+            <a type="radio" id="langSwitch" class="langSwitch" for-value="en">english</a>
+            <script>
+                $(".logo").live("click", function () {
+                    shell.openExternal('http://www.sonoscape.com.cn/mobilecn/index.aspx');
+                });
+            </script>
         </div>
         <div class="center">
             <div class="changeInput"><input type="text" id="resumeTitle" placeholder="点击修改简历名称"
-                                            data_value="中南大学_廖湘荡的简历"
+                                            data_value="中南大学"
                                             value="中南大学"></div>
             <input type="hidden" id="hidden_data_resume_language" value="zh"/>
         </div>

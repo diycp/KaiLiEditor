@@ -1,7 +1,4 @@
 $(document).ready(function () {
-    const ipcRenderer = require('electron').ipcRenderer;
-    const fs = require('fs');
-    const nativeImage = require('electron').nativeImage;
     readFile();
     //拖动读取文件
     function readFile() {
@@ -23,7 +20,8 @@ $(document).ready(function () {
             var basePath = file.path.substring(0, file.path.lastIndexOf("/") + 1);
             fs.readFile(file.path, 'utf8', function (err, data) {
                 if (err) {
-                    console.log(err);
+                    alert("读取文件失败! :" + err.message);
+                    return;
                 }
                 readXml(basePath, data);
             });
@@ -39,34 +37,31 @@ $(document).ready(function () {
         return false;
     }
 
-    //导入文件
-    $("#file").live("change", function () {
-        // 检查文件是否选择:
-        var name = $("#file").val();
-        if (!name) {
-            layer.msg("没有选择文件!");
-            return;
-        }
-        console.log(name);
-        $(".div_upload").find("p").text(name);
-        var filePath = name.substring(0, name.lastIndexOf("\\") + 1);
-        console.log(filePath);
-        var fileType = name.substring(name.lastIndexOf(".") + 1);
-        if (fileType.toLocaleLowerCase() != "xml") {
-            layer.msg("只支持xml文件格式！");
-            return;
-        }
+    //根据用户选择导入xml文件
+    $("#improt_reume_file").live("click", function () {
 
-        var file = $("#file").get(0).files[0];
-        if (file) {
-            var reader = new FileReader();
-            reader.readAsText(file);
-            reader.onload = readXml;
-            //隐藏导入文件提示框
-            // $('#imResumeModal').modal('hide');
-        } else {
-            alert("没有选择文件");
-        }
+        dialog.showOpenDialog(function (fileNames) {
+            // fileNames is an array that contains all the selected
+            if (fileNames === undefined) {
+                console.log("No file selected");
+                return;
+            }
+            var filePath = fileNames[0];
+            if (!checkFileType(filePath, "xml")) {
+                layer.msg("只支持xml文件格式！");
+                return;
+            }
+            console.log('file path' + filePath);
+            var basePath = filePath.substring(0, filePath.lastIndexOf("/") + 1);
+            fs.readFile(filePath, 'utf8', function (err, data) {
+                if (err) {
+                    alert("读取文件失败! :" + err.message);
+                    return;
+                }
+                readXml(basePath, data);
+                $('#imResumeModal').modal('hide');
+            });
+        });
     });
 
     function readXml(basePath, data) {
@@ -789,13 +784,19 @@ $(document).ready(function () {
 //						},200)
                         break;
                     case '右':
-                        $(o).find(".hover-btn").css({left: w + "px", top: 0}).stop(true).animate({left: 0, top: 0}, 300)
+                        $(o).find(".hover-btn").css({left: w + "px", top: 0}).stop(true).animate({
+                            left: 0,
+                            top: 0
+                        }, 300)
 //					   setTimeout(function(){
 //						   $(o).find(".hover-btn a").css({left:w+"px",top:'90px'}).stop(true).animate({left:'50%',top:'90px'},200)
 //					   },200)
                         break;
                     case '下':
-                        $(o).find(".hover-btn").css({left: 0, top: h + "px"}).stop(true).animate({left: 0, top: 0}, 300)
+                        $(o).find(".hover-btn").css({left: 0, top: h + "px"}).stop(true).animate({
+                            left: 0,
+                            top: 0
+                        }, 300)
 //					   setTimeout(function(){
 //						   $(o).find(".hover-btn a").css({left:'50%',top:h+"px"}).stop(true).animate({left:'50%',top:'90px'},200)
 //					   },200)

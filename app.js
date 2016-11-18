@@ -17,7 +17,7 @@ function createWindow() {
     console.log(require.resolve('electron'));
     mainWindow = new BrowserWindow({
         center: true,
-        icon: 'images/logo.jpg'
+        icon: 'images/logoSquare.png'
     });
     mainWindow.loadURL('file://' + __dirname + '/index.html');
     mainWindow.maximize();
@@ -42,7 +42,6 @@ function createWindow() {
 app.on("ready", function () {
     enrollerShortcut();
     createWindow();
-    readFileListener();
 });
 
 // 监听应用程序对象中的所有浏览器窗口对象是否全部被关闭，如果全部被关闭，则退出整个应用程序。该
@@ -64,24 +63,6 @@ app.on('will-quit', function () {
     //注销全局快捷键
     globalShortcut.unregisterAll();
 });
-
-function readFileListener() {
-    // ipcMain.on('asynchronous-message', function (event, arg) {
-    //     console.log(arg);  // prints "ping"
-    //     event.sender.send('asynchronous-reply', 'pong');
-    // });
-    ipcMain.on('synchronous-message', function (event, arg) {
-        console.log(arg);  // prints "ping"
-        switch (arg) {
-            case("readFile") :
-                console.log('enter switch case');
-                break;
-            default :
-                break;
-        }
-        event.returnValue = 'pong';
-    })
-}
 
 function enrollerShortcut() {
     console.log(globalShortcut.isRegistered('f5'));
