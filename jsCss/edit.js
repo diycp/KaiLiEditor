@@ -1,47 +1,77 @@
 $(document).ready(function () {
+    const ipcRenderer = require('electron').ipcRenderer;
+    const fs = require('fs');
+    const nativeImage = require('electron').nativeImage;
+    readFile();
+    //拖动读取文件
+    function readFile() {
+        var holder = document.body;
+        holder.ondragover = function () {
+            return false;
+        };
+        holder.ondragleave = holder.ondragend = function () {
+            return false;
+        };
+        holder.ondrop = function (e) {
+            e.preventDefault();
+            var file = e.dataTransfer.files[0];
+            if (!checkFileType(file.path, "xml")) {
+                layer.msg("只支持xml文件格式！");
+                return;
+            }
+            console.log('file path' + file.path);
+            var basePath = file.path.substring(0, file.path.lastIndexOf("/") + 1);
+            fs.readFile(file.path, 'utf8', function (err, data) {
+                if (err) {
+                    console.log(err);
+                }
+                readXml(basePath, data);
+            });
+            return false;
+        };
+    }
+
+    function checkFileType(filename, type) {
+        var fileType = filename.substring(filename.lastIndexOf(".") + 1);
+        if (fileType.toLocaleLowerCase() == type) {
+            return true;
+        }
+        return false;
+    }
+
     //导入文件
-    $("#filename").live("change", function () {
+    $("#file").live("change", function () {
         // 检查文件是否选择:
-        var name = $("#filename").val();
+        var name = $("#file").val();
         if (!name) {
             layer.msg("没有选择文件!");
             return;
         }
         console.log(name);
         $(".div_upload").find("p").text(name);
-        var fileName = name.substring(name.lastIndexOf("\\") + 1);
         var filePath = name.substring(0, name.lastIndexOf("\\") + 1);
         console.log(filePath);
         var fileType = name.substring(name.lastIndexOf(".") + 1);
-        $("#fileName").val(fileName);
         if (fileType.toLocaleLowerCase() != "xml") {
             layer.msg("只支持xml文件格式！");
             return;
         }
 
-        var file = $("#filename").get(0).files[0];
+        var file = $("#file").get(0).files[0];
         if (file) {
             var reader = new FileReader();
             reader.readAsText(file);
-            reader.onload = readXmlByJs;
+            reader.onload = readXml;
             //隐藏导入文件提示框
-            $('#imResumeModal').modal('hide');
+            // $('#imResumeModal').modal('hide');
         } else {
             alert("没有选择文件");
         }
     });
 
-    function readXmlByJs(evt) {
-        var xmlDoc;
-        if (window.DOMParser) { // Firefox, Chrome, Opera, etc.
-            var parser = new DOMParser();
-            xmlDoc = parser.parseFromString(evt.target.result, "text/xml");
-        }
-        else { // Internet Explorer
-            xmlDoc = new ActiveXObject("Microsoft.XMLDOM");
-            xmlDoc.async = false;
-            xmlDoc.loadXML(evt.target.result);
-        }
+    function readXml(basePath, data) {
+        var parser = new DOMParser();
+        var xmlDoc = parser.parseFromString(data, "text/xml");
 
         //相当于用二维数组保存所有标签
         var nodes = xmlDoc.documentElement.childNodes;
@@ -59,18 +89,18 @@ $(document).ready(function () {
         $(".item2").get(1).innerHTML = nodes[1].getElementsByTagName("ITEM2")[1].textContent;
         $(".item2").get(2).innerHTML = nodes[1].getElementsByTagName("ITEM2")[2].textContent;
 
+        //不容易啊
+        for (var i = 0; i < 5; i++) {
+            var path = basePath + 'img/' + nodes[1].getElementsByTagName("IMG1")[i].textContent;
+            var img = nativeImage.createFromPath(path);
+            $(".img1").get(i).setAttribute('src', img.toDataURL());
+        }
 
-        $(".img1").get(0).setAttribute('src', nodes[1].getElementsByTagName("IMG1")[0].textContent);
-        $(".img1").get(1).setAttribute('src', nodes[1].getElementsByTagName("IMG1")[1].textContent);
-        $(".img1").get(2).setAttribute('src', nodes[1].getElementsByTagName("IMG1")[2].textContent);
-        $(".img1").get(3).setAttribute('src', nodes[1].getElementsByTagName("IMG1")[3].textContent);
-        $(".img1").get(4).setAttribute('src', nodes[1].getElementsByTagName("IMG1")[4].textContent);
-
-        $(".img2").get(0).setAttribute('src', nodes[1].getElementsByTagName("IMG2")[0].textContent);
-        $(".img2").get(1).setAttribute('src', nodes[1].getElementsByTagName("IMG2")[1].textContent);
-        $(".img2").get(2).setAttribute('src', nodes[1].getElementsByTagName("IMG2")[2].textContent);
-        $(".img2").get(3).setAttribute('src', nodes[1].getElementsByTagName("IMG2")[3].textContent);
-        $(".img2").get(4).setAttribute('src', nodes[1].getElementsByTagName("IMG2")[4].textContent);
+        for (var i = 0; i < 5; i++) {
+            var path = basePath + 'img/' + nodes[1].getElementsByTagName("IMG1")[i].textContent;
+            var img = nativeImage.createFromPath(path);
+            $(".img2").get(i).setAttribute('src', img.toDataURL());
+        }
 
         $(".see").get(0).innerHTML = nodes[1].getElementsByTagName("SEE")[0].textContent;
         $(".conclusion").get(0).innerHTML = nodes[1].getElementsByTagName("CONCLUSION")[0].textContent;
@@ -107,6 +137,11 @@ $(document).ready(function () {
         //});
         $(".imResumeBtn").click(function () {
             $('#imResumeModal').modal('show');
+            // console.log(ipcRenderer.sendSync('synchronous-message', 'readFile'));
+            // ipcRenderer.on('asynchronous-reply', function (event, arg) {
+            //     console.log(arg); // prints "pong"
+            // });
+            // ipcRenderer.send('asynchronous-message', 'ping');
         });
         $(".setResumeBtn").click(function () {
             $('#setResumeModal').modal('show');

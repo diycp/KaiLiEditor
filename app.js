@@ -2,6 +2,7 @@
 const electron = require("electron");
 // 创建应用程序对象
 const app = electron.app;
+const ipcMain = require('electron').ipcMain;
 
 var globalShortcut = electron.globalShortcut;
 // 创建一个浏览器窗口，主要用来加载HTML页面
@@ -65,15 +66,19 @@ app.on('will-quit', function () {
 });
 
 function readFileListener() {
-    // In main process.
-    const ipcMain = require('electron').ipcMain;
-    ipcMain.on('asynchronous-message', function (event, arg) {
-        console.log(arg);  // prints "ping"
-        event.sender.send('asynchronous-reply', 'pong');
-    });
-
+    // ipcMain.on('asynchronous-message', function (event, arg) {
+    //     console.log(arg);  // prints "ping"
+    //     event.sender.send('asynchronous-reply', 'pong');
+    // });
     ipcMain.on('synchronous-message', function (event, arg) {
         console.log(arg);  // prints "ping"
+        switch (arg) {
+            case("readFile") :
+                console.log('enter switch case');
+                break;
+            default :
+                break;
+        }
         event.returnValue = 'pong';
     })
 }
