@@ -197,17 +197,12 @@
     </button>
     <script>
         $("#test").click(function () {
-            html2canvas(document.getElementById("resume_body"), {
-                onrendered: function (canvas) {
-                    //canvas.id = 'screenshotCanvas';
-                    //var can = document.getElementById("screenshotCanvas");
-                    document.body.appendChild(canvas);
-                    var imgDataURI = canvas.toDataURL('image/png');
-                },
-                width: 300,
-                height: 300,
-                loggingP: true,
+            const ipcRenderer = require('electron').ipcRenderer;
+            console.log(ipcRenderer.sendSync('synchronous-message', 'ping')); // prints "pong"
+            ipcRenderer.on('asynchronous-reply', function (event, arg) {
+                console.log(arg); // prints "pong"
             });
+            ipcRenderer.send('asynchronous-message', 'ping');
         });
     </script>
     <!--编辑区域-->

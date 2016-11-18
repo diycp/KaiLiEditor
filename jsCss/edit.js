@@ -1,5 +1,4 @@
 $(document).ready(function () {
-
     //导入文件
     $("#filename").live("change", function () {
         // 检查文件是否选择:
@@ -8,9 +7,11 @@ $(document).ready(function () {
             layer.msg("没有选择文件!");
             return;
         }
-
+        console.log(name);
         $(".div_upload").find("p").text(name);
         var fileName = name.substring(name.lastIndexOf("\\") + 1);
+        var filePath = name.substring(0, name.lastIndexOf("\\") + 1);
+        console.log(filePath);
         var fileType = name.substring(name.lastIndexOf(".") + 1);
         $("#fileName").val(fileName);
         if (fileType.toLocaleLowerCase() != "xml") {
@@ -19,7 +20,6 @@ $(document).ready(function () {
         }
 
         var file = $("#filename").get(0).files[0];
-        // console.log(file.val());
         if (file) {
             var reader = new FileReader();
             reader.readAsText(file);

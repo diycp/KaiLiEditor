@@ -39,21 +39,9 @@ function createWindow() {
 
 // 监听应用程序对象是否初始化完成，初始化完成之后即可创建浏览器窗口
 app.on("ready", function () {
-    console.log("hello");
-    console.log(globalShortcut.isRegistered('f5'));
-    var ret = globalShortcut.register('f5', function () {
-        //按下快捷键刷新
-        if (mainWindow.isFocused()) {
-            // mainWindow.refresh;
-            mainWindow.reload();
-            console.log("refresh...");
-        }
-    });
-
-    if (!ret) {
-        console.log('快捷键注册出错');
-    }
+    enrollerShortcut();
     createWindow();
+    readFileListener();
 });
 
 // 监听应用程序对象中的所有浏览器窗口对象是否全部被关闭，如果全部被关闭，则退出整个应用程序。该
@@ -75,4 +63,33 @@ app.on('will-quit', function () {
     //注销全局快捷键
     globalShortcut.unregisterAll();
 });
+
+function readFileListener() {
+    // In main process.
+    const ipcMain = require('electron').ipcMain;
+    ipcMain.on('asynchronous-message', function (event, arg) {
+        console.log(arg);  // prints "ping"
+        event.sender.send('asynchronous-reply', 'pong');
+    });
+
+    ipcMain.on('synchronous-message', function (event, arg) {
+        console.log(arg);  // prints "ping"
+        event.returnValue = 'pong';
+    })
+}
+
+function enrollerShortcut() {
+    console.log(globalShortcut.isRegistered('f5'));
+    var ret = globalShortcut.register('f5', function () {
+        //按下快捷键刷新
+        if (mainWindow.isFocused()) {
+            // mainWindow.refresh;
+            mainWindow.reload();
+            console.log("refresh...");
+        }
+    });
+    if (!ret) {
+        console.log('快捷键注册出错');
+    }
+}
 
