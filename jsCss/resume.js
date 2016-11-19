@@ -69,85 +69,17 @@ var shell = require('electron').shell;
 // 国际化
 var localLang = {
     // 基本信息
-    "name": {"type": "html", "zh": "五百丁", "en": "Wonderful Ding"},
-    "age": {"type": "value", "zh": "24岁", "en": "24", "zh_notice": "年龄/生日", "en_notice": "Age"},
-    "address": {
-        "type": "value",
-        "zh": "广东省广州市",
-        "en": "Guangzhou,Guangdong",
-        "zh_notice": "居住地",
-        "en_notice": "Address"
-    },
-    "mobile": {"type": "value", "zh": "13588888888", "en": "13588888888", "zh_notice": "手机号码", "en_notice": "Mobile"},
-    "email": {
-        "type": "value",
-        "zh": "service@500d.me",
-        "en": "service@500d.me",
-        "zh_notice": "电子邮箱",
-        "en_notice": "E-mail"
-    },
-    "job": {"type": "html", "zh": "求职目标：五百丁市场专员", "en": "Job Objective：Web Designer"},
-    // TITLE
-    "edu": {"type": "html", "zh": "教育背景", "en": "EDUCATION"},
-    "work": {"type": "html", "zh": "工作经历", "en": "EXPERIENCE"},
-    "project": {"type": "html", "zh": "项目经验", "en": "PROJECT"},
-    "out_school": {"type": "html", "zh": "校外实践", "en": "EXPERIENCE"},
-    "in_school": {"type": "html", "zh": "校内实践", "en": "EXPERIENCE"},
-    "self": {"type": "html", "zh": "自我评价", "en": "PROFILE"},
-    "cart": {"type": "html", "zh": "技能证书", "en": "CARTS"},
-    "honor": {"type": "html", "zh": "奖项荣誉", "en": "HONORS"},
-    "hobby": {"type": "html", "zh": "兴趣爱好", "en": "HOBBIES"},
-    "basic_info": {"type": "html", "zh": "基本资料", "en": "INFORMATRION"},
-    "msg": {"type": "html", "zh": "基本信息", "en": "INFORMATRION"},
-    "master_skills": {"type": "html", "zh": "掌握技能", "en": "SKILLS"},
-    "skill": {"type": "html", "zh": "个人技能", "en": "SKILLS"},
-    // 内容
-    // 教育背景
-    "edu_time": {"type": "html", "zh": "2008.9-2012.7", "en": "Sept. 2007 till now"},
-    "edu_unit": {"type": "html", "zh": "五百丁科技大学", "en": "Massachusetts Institute of Technology (MIT)"},
-    "edu_job": {"type": "html", "zh": "市场营销（本科）", "en": "Boston MA"},
-    "edu_value": {
-        "type": "html",
-        "zh": "<p>主修课程</p><p>基本会计、统计学、市场营销、国际市场营销、市场调查与预测、商业心理学、广告学、公共关系学、货币银行学、经济法、国际贸易、大学英语、经济数学、计算机应用等。</p>",
-        "en": "<p>Foreign Philosophies, International Trade, Fine Arts，Artistic Design,Art Theory,pencil sketch,Introduction to ART,sketch,modelling foundation and color foundation,sculpture,Critical Contemporary Of Western Artists, Introduction to copper plate engraving , ink and wash painting,interaction with color,Composition,Introduction to lithograph.</p>"
-    },
-    // 工作经历
-    "work_a_time": {"type": "html", "zh": "2012-04至今", "en": "2000 – Present"},
-    "work_a_unit": {"type": "html", "zh": "广州五百丁信息科技有限公司", "en": "Copley Web Designers, Boston MA"},
-    "work_a_job": {"type": "html", "zh": "产品经理", "en": "Web Designer"},
-    "work_a_value": {
-        "type": "html",
-        "zh": "<p>1、团队管理，电商产品管理，电子商务策划项目管理；</p><p>2、网站需求分析，产品设计，产品跟踪，及后续产品优化工作；</p><p>3、与研发、营销、客服配合，展开产品开发、销售、售后工作；</p><p>4、产品应用市场调研和分析；</p><p>5、公司品牌宣传，产品推广，负责公司网站策划和运营工作。</p>",
-        "en": "<p>Responsible for the design and development of Internet, Intranet, web sites and web applications through the use of Macromedia Dream weaver, Front Page and Adobe Photo Shop 5.0.</p><p>Developed page layout, navigation, copy, animation, buttons and icons.</p><p>Presented designs and concepts to Clients and the Management for review.</p><p>Installed Shopping Carts, Automatic Response mailers and Online Forms.</p><p>Assisted help desk staff in streamlining the process.</p>"
-    },
-
-    "work_b_time": {"type": "html", "zh": "2010-03-2012-03", "en": "1998 – 2000"},
-    "work_b_unit": {"type": "html", "zh": "广州一百丁信息科技有限公司", "en": "Brighton Web Design Studio, Boston MA"},
-    "work_b_job": {"type": "html", "zh": "软件工程师", "en": "Web Designer"},
-    "work_b_value": {
-        "type": "html",
-        "zh": "<p>1、负责公司内部业务系统的设计及改进，参与公司网上商城系统产品功能设计及实施工作。</p><p>2、负责客户调研、客户需求分析、方案写作等工作， 参与公司多个大型电子商务项目的策划工作，担任大商集团网上商城一期建设项目经理。</p>",
-        "en": "<p>Responsible for the design of client websites right from conceptualization stage to its implementation.</p><p>Worked with digital graphical design tools including Adobe PhotoShop, Fireworks, Flash and Illustrator.</p><p>Created animations using flash for an on-line multimedia store.</p><p>Responsible for web hosting and the installation of e-mail and forms.</p><p>Developed access database and web interface suitable for client needs.</p><p>Perform the validation and testing of the finished web sites.</p>"
-    },
-    // 自我评价
-    "self_value": {
-        "type": "html",
-        "zh": "<p>深度互联网从业人员，对互联网保持高度的敏感性和关注度，熟悉产品开发流程，有很强的产品规划、需求分析、交互设计能力，能独立承担APP和WEB项目的管控工作，善于沟通，贴近用户。</p><p>衷情于互联网技术应用，在五年的工作经验当中，通过自身努力从软件开发工程师转型到产品经理，获得了不错的成绩；</p><p>我正在寻找一个更好的发展平台，希望能够充分发挥自己的优势，共同努力成就一番事业。</p>",
-        "en": "<p>Mature，dynamic and honest．Excellent ability of systematical management．</p><p>Ability to work independent1y，mature and resourcefu1, A stable personality and high sense of responsibility are desirable.</p><p>Initiative，independent and good communication skill．</p>"
-    },
-    // 技能证书
-    "cert_value": {
-        "type": "html",
-        "zh": "<p>CET-6，优秀的听说写能力</p><p>计算机二级，熟悉计算机各项操作</p><p>高级营销员，国家职业资格四级</p>",
-        "en": "<p>Windows 95/98/2000 MS DOS</p><p>Java HTML</p><p>JavaScript Shell</p><p>Visual Basic 4.0 Microm Rbase</p><p>Macromedia Dream Weaver Fireworks</p><p>Adobe PhotoShop MS Access</p><p>Microsoft Front Page Oracle</p><p>Corel Paradox Visual C++</p><p>Adobe Photo Mill</p>"
-    },
-    // 荣誉
-    "honor_value": {
-        "type": "html",
-        "zh": "<p>2009.10获国家奖学金</p><p>2010.11获“三好学生称号”</p><p>2010.12华南大学生创意营销大赛一等奖</p><p>2011.4挑战杯创业计划大赛省级铜奖</p>",
-        "en": "<p>Member of the Latin Team of the WenQin Art Troupe</p><p>Second Place in Zhejiang University Yi Ou Mu Invitational Tournament</p><p>Third Place in Vanke Cup Real Estate Elite Challenge</p><p>Excellent officer of the Student Union of the School of Management in Zhejiang University</p>"
-    }
-}
+    "name": {"type": "value", "zh": "姓名：", "en": "Name :"},
+    "sex": {"type": "value", "zh": "性别：", "en": "Sex :"},
+    "age": {"type": "value", "zh": "年龄：", "en": "Age :"},
+    "applicant": {"type": "value", "zh": "申请者：", "en": "Applicant :"},
+    "checking_time": {"type": "value", "zh": "检查时间：", "en": "Checking Time :"},
+    "address": {"type": "value", "zh": "住院号：", "en": "Address :"},
+    "admission_number": {"type": "value", "zh": "住院号：", "en": "Admission Number :"},
+    "mobile": {"type": "value", "zh": "联系方式：", "en": "Mobile :"},
+    "email": {"type": "value", "zh": "邮箱", "en": "E-mail :"},
+    "job": {"type": "value", "zh": "职业：", "en": "Job :"}
+};
 
 //绑定粘贴事件，使粘贴的数据只保留文本
 document.addEventListener("paste", function (e) {
@@ -364,7 +296,6 @@ $(function () {
     resumeDrag();
     resumeChangeTemplate();
     resumeNotice();
-    resumeCode();
 });
 
 /**
@@ -410,21 +341,6 @@ function setMember(id, resumeId) {
         member.id = id;
     if (resumeId)
         member.resumeId = resumeId;
-}
-
-/**
- * 移动简历二维码
- */
-function resumeCode() {
-    $("#resume_insert_code").click(function () {
-        var $image = $(insertImageDiv);
-        if (member && member.id) {
-            $image.find("img").attr("src", wbdcnf.base + "/mobile/native/code/?mid=" + member.id);
-            $("#resume_body").append($image);
-        } else {
-            notice("插入失败，请联系管理员！");
-        }
-    });
 }
 
 /**
@@ -1056,7 +972,7 @@ function resumeSave(showNotice) {
                         var pre_url = wbdcnf.base + '/resume/' + data_visit_id + '/';
                         $("#preview_btn").attr("href", pre_url);
                     }
-                    //简历设置框的visitId值
+                    //设置框的visitId值
                     if ($("#visitid").length > 0) {
                         $("#visitid").val(data_visit_id);
                     }
@@ -1172,7 +1088,7 @@ function resumeAddResumeItem() {
 }
 
 /**
- * 上传简历模板
+ * 上传模板
  */
 function resumeUpload() {
     $(".import_confirm").click(function () {
@@ -1238,22 +1154,21 @@ function i18n() {
         var type = langValue["type"];
         var nowValue = langValue[nowLang];
         var oldValue = langValue[oldLang];
-        var placeholder = langValue[nowLang + "_notice"];
         var value = null;
         var keyObj = $(".resume_lang_" + key);
         if (type == "html")
             value = keyObj.html();
         else
-            value = keyObj.val();
+            value = keyObj.text();
         value = clearBlank(value);
         if (value == oldValue) {
-            if (type == "html")
+            if (type == "html") {
                 keyObj.html(nowValue);
+                alert(nowValue);
+            }
             else
-                keyObj.val(nowValue);
+                keyObj.text(nowValue);
         }
-        if (placeholder && type == "value")
-            keyObj.attr("placeholder", placeholder);
     }
 }
 
@@ -2134,7 +2049,7 @@ function getResume() {
     if (resume_title_value == null || resume_title_value == "") {
         resume_title_value = $("#resumeTitle").attr("data_value");
     }
-    resume["resumeTitle"] = resume_title_value; // 简历名称
+    resume["resumeTitle"] = resume_title_value;
     if (resumeType == "resume") {
         getResumeMsg(resume);
         getResumeHead(resume);

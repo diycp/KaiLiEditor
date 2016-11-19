@@ -97,14 +97,14 @@
             </div>
             <div class="right text">
                 <br/>
-                <p>当前简历已保存成功</p>
+                <p>已保存成功</p>
                 <p class="p1">辛苦了，歇息一下吧</p>
             </div>
         </div>
     </div>
 </div>
 
-<!--导入简历提示框 -->
+<!--导入xml文件提示框 -->
 <div class="modal fade imResumeModal" id="imResumeModal">
     <div class="modal-dialog">
         <div class="modal-content clearfix">
@@ -149,7 +149,7 @@
     <div class="inner">
         <div class="left">
             <a class="logo"><img src="images/logo2.png"/></a>
-            <a type="radio" id="langSwitch" class="langSwitch" for-value="en">english</a>
+            <a type="radio" id="langSwitch" class="langSwitch" for-value="zh">english</a>
             <script>
                 $(".logo").live("click", function () {
                     shell.openExternal('http://www.sonoscape.com.cn/mobilecn/index.aspx');
@@ -291,7 +291,7 @@
                         <div class="baseContent resume_item_items baseDel resume_delete_area">
                             <div class="conText clearfix baseDel resume_delete_area" contenteditable="true">
                                 <div class="delete wbdfont resume_delete">&#xe75b;</div>
-                                <img align="left" valign="top" height="120pt" width="160pt"
+                                <img class="hsptlLogo" align="left" valign="top" height="120pt" width="160pt"
                                      src="report/img/hospitallogo.png"/>
                                 <div float="left">
                                     <div class="caption1">qewtuuyiuouiuiouipiopiopi</div>
@@ -471,23 +471,24 @@
                             <div class="conText clearfix baseDel resume_delete_area" contenteditable="true">
                                 <div class="delete wbdfont resume_delete">&#xe75b;</div>
                                 <div class="baseMsg">
-                                    <span class="cellname" id="name">姓名:</span> <span
-                                        class="cellinput item1">张三</span>
+                                    <span class="cellname resume_lang_name" id="name">姓名：</span> 
+                                    <span class="cellinput item1">张三</span>
                                 </div>
                                 <div class="baseMsg"></div>
-                                <div class="baseMsg"><span class="cellname">性别:</span> <span
-                                        class="cellinput item1">男</span>
+                                <div class="baseMsg"><span class="cellname resume_lang_sex">性别：</span> 
+                                    <span class="cellinput item1">男</span>
                                 </div>
-                                <div class="baseMsg"><span class="cellname">年龄:</span> <span
+                                <div class="baseMsg"><span class="cellname resume_lang_age">年龄：</span> <span
                                         class="cellinput item1">12</span>
                                 </div>
-                                <div class="baseMsg"><span class="cellname">申请者:</span> <span
+                                <div class="baseMsg"><span class="cellname resume_lang_applicant">申请者：</span> <span
                                         class="cellinput item2"></span></div>
-                                <div class="baseMsg"><span class="cellname">检查时间:</span> <span
+                                <div class="baseMsg"><span class="cellname resume_lang_checking_time">检查时间：</span> <span
                                         class="cellinput item2">2016-08-31</span>
                                 </div>
-                                <div class="baseMsg"><span class="cellname">住院号:</span> <span
-                                        class="cellinput item2">123</span></div>
+                                <div class="baseMsg"><span
+                                        class="cellname resume_lang_admission_number">住院号：</span> 
+                                    <span class="cellinput item2">123</span></div>
                                 <div class="baseMsg"></div>
                             </div>
                         </div>

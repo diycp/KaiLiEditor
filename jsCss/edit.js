@@ -71,18 +71,21 @@ $(document).ready(function () {
         //相当于用二维数组保存所有标签
         var nodes = xmlDoc.documentElement.childNodes;
         //根据标签名取值
-        $(".caption1").get(0).innerHTML = nodes[1].getElementsByTagName("CAP1")[0].textContent;
-        $(".caption2").get(0).innerHTML = nodes[1].getElementsByTagName("CAP2")[0].textContent;
+        var path = basePath + 'img/' + nodes[1].getElementsByTagName("LOGO")[0].textContent;
+        var img = nativeImage.createFromPath(path);
+        $(".hsptlLogo").get(0).setAttribute('src', img.toDataURL());
+        $(".caption1").get(0).innerHTML = nodes[1].getElementsByTagName("CAP1")[0].innerHTML;
+        $(".caption2").get(0).innerHTML = nodes[1].getElementsByTagName("CAP2")[0].innerHTML;
 
-        $("#model").get(0).innerHTML = nodes[1].getElementsByTagName("MODEL")[0].textContent;
-        $("#checkId").get(0).innerHTML = nodes[1].getElementsByTagName("CHECKID")[0].textContent;
+        $("#model").get(0).innerHTML = nodes[1].getElementsByTagName("MODEL")[0].innerHTML;
+        $("#checkId").get(0).innerHTML = nodes[1].getElementsByTagName("CHECKID")[0].innerHTML;
 
-        $(".item1").get(0).innerHTML = nodes[1].getElementsByTagName("ITEM1")[0].textContent;
-        $(".item1").get(1).innerHTML = nodes[1].getElementsByTagName("ITEM1")[1].textContent;
-        $(".item1").get(2).innerHTML = nodes[1].getElementsByTagName("ITEM1")[2].textContent;
-        $(".item2").get(0).innerHTML = nodes[1].getElementsByTagName("ITEM2")[0].textContent;
-        $(".item2").get(1).innerHTML = nodes[1].getElementsByTagName("ITEM2")[1].textContent;
-        $(".item2").get(2).innerHTML = nodes[1].getElementsByTagName("ITEM2")[2].textContent;
+        $(".item1").get(0).innerHTML = nodes[1].getElementsByTagName("ITEM1")[0].innerHTML;
+        $(".item1").get(1).innerHTML = nodes[1].getElementsByTagName("ITEM1")[1].innerHTML;
+        $(".item1").get(2).innerHTML = nodes[1].getElementsByTagName("ITEM1")[2].innerHTML;
+        $(".item2").get(0).innerHTML = nodes[1].getElementsByTagName("ITEM2")[0].innerHTML;
+        $(".item2").get(1).innerHTML = nodes[1].getElementsByTagName("ITEM2")[1].innerHTML;
+        $(".item2").get(2).innerHTML = nodes[1].getElementsByTagName("ITEM2")[2].innerHTML;
 
         //不容易啊
         for (var i = 0; i < 5; i++) {
@@ -97,10 +100,10 @@ $(document).ready(function () {
             $(".img2").get(i).setAttribute('src', img.toDataURL());
         }
 
-        $(".see").get(0).innerHTML = nodes[1].getElementsByTagName("SEE")[0].textContent;
-        $(".conclusion").get(0).innerHTML = nodes[1].getElementsByTagName("CONCLUSION")[0].textContent;
-        $(".suggestion").get(0).innerHTML = nodes[1].getElementsByTagName("SUGGESTION")[0].textContent;
-        $(".biopsy").get(0).innerHTML = nodes[1].getElementsByTagName("BIOPSY")[0].textContent;
+        $(".see").get(0).innerHTML = nodes[1].getElementsByTagName("SEE")[0].innerHTML;
+        $(".conclusion").get(0).innerHTML = nodes[1].getElementsByTagName("CONCLUSION")[0].innerHTML;
+        $(".suggestion").get(0).innerHTML = nodes[1].getElementsByTagName("SUGGESTION")[0].innerHTML;
+        $(".biopsy").get(0).innerHTML = nodes[1].getElementsByTagName("BIOPSY")[0].innerHTML;
     }
 
     //交互样式
