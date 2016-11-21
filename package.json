@@ -1,5 +1,4 @@
 {
-    "name":"ReportEditor",
-    "version":"0.0.1",
-    "main":"app.js"
+  "name": "editor",
+  "main": "index.html"
 }

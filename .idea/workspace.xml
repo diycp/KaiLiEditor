@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10409374-0a3a-4f7e-8bea-c9c6240f96a9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jsCss/edit.js" afterPath="$PROJECT_DIR$/jsCss/edit.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jsCss/resume.js" afterPath="$PROJECT_DIR$/jsCss/resume.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/.report.xml.swp" afterPath="" />
     </list>
     <ignored path="KaiLiReport.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -345,16 +342,16 @@
       <workItem from="1479350645220" duration="4641000" />
       <workItem from="1479366047219" duration="12483000" />
       <workItem from="1479444722148" duration="27648000" />
-      <workItem from="1479545354885" duration="6245000" />
+      <workItem from="1479545354885" duration="6844000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51017000" />
+    <option name="totallyTimeSpent" value="51616000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="36" width="1920" height="1044" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
